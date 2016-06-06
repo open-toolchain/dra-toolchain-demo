@@ -106,10 +106,10 @@ orders-api-build:
     services: ["orders-api-repo", "test"]
   hidden: [form, description]
 
-#Slack
-messaging:
-  service_id: slack
-  include: slack.yml
+#Deploy Risk Analytics
+dra:
+  service_id: draservicebroker
+  include: dra.yml
 
 #Sauce Labs
 test:
