@@ -13,7 +13,6 @@ stages:
   - name: Unit Tests
     type: tester
     extension_id: ibm.devops.services.pipeline.dra_upload_results
-    target: null
     APPLICATION_NAME: Catalog-API
     FORMAT_SELECT: mocha
     LIFE_CYCLE_STAGE_SELECT: unittest
@@ -35,7 +34,6 @@ stages:
   - name: DEV Gate
     type: tester
     extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    target: null
     CRITERIA: Unit Test coverage
     APPLICATION_NAME: Catalog-API
     ENVIRONMENT: DEV	  
