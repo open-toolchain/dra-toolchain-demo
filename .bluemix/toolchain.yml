@@ -109,7 +109,8 @@ orders-api-build:
 #Deploy Risk Analytics
 dra:
   service_id: draservicebroker
-#  include: dra.yml
+  parameters:
+   criteria: "woot"
 
 #Sauce Labs
 test:
