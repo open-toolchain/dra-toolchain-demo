@@ -111,7 +111,7 @@ dra:
   service_id: draservicebroker
   parameters:
     name: "test"
-    criteria: "woot"
+    criteria: "{\"name\": \"Unit Test Coverage\", \"stage\": \"unittest\", \"rules\": [{\"name\": \"Unit Test Checks\",\"format\": \"mocha\",\"stage\": \"unittest\",\"percentPass\": 100,\"regressionCheck\": true,\"criticalTests\": []},{\"name\": \"Coverage Test Checks\",\"format\": \"istanbul\",\"stage\": \"code\",\"codeCoverage\": 90,\"regressionCheck\": true}]}"
 
 #Sauce Labs
 test:
