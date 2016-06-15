@@ -110,7 +110,7 @@ orders-api-build:
 dra:
   service_id: draservicebroker
   parameters:
-   criteria: "woot"
+    criteria: "woot"
 
 #Sauce Labs
 test:
