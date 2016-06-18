@@ -1,5 +1,5 @@
 ---
-name: "jaime - Cloud-native Toolchain for Microservices"
+name: "Cloud-native Toolchain for Microservices"
 description: "With this cloud-native toolchain, you use a sample to create an online store that consists of three microservices: a Catalog API, an Orders API, and a UI that calls both of the APIs. The toolchain is preconfigured for continuous delivery, source control, blue-green deployment, functional testing, issue tracking, online editing, and deployment risk analytics.\n\nTo get started, click **Create**."
 version: 0.2
 image: data:image/png;base64,$file(dra-toolchain2.png,base64)
@@ -111,7 +111,7 @@ dra:
   service_id: draservicebroker
   parameters:
     name: "test"
-    criteria: "[{\"name\": \"Unit Test Checks\", \"stage\": \"unittest\", \"rules\": [{\"name\": \"Unit Test Checks\",\"format\": \"mocha\",\"stage\": \"unittest\",\"percentPass\": 100,\"regressionCheck\": true,\"criticalTests\": []}]},{\"name\": \"Code Coverage Checks\", \"stage\": \"code\", \"rules\": [{\"name\": \"Code Coverage Checks\",\"format\": \"istanbul\",\"stage\": \"code\",\"codeCoverage\": 90,\"regressionCheck\": true}]}]"
+    criteria: "[{\"name\": \"Unit Test Checks\", \"stage\": \"unittest\", \"rules\": [{\"name\": \"Unit Test Checks\",\"format\": \"mocha\",\"stage\": \"unittest\",\"percentPass\": 100,\"regressionCheck\": true,\"criticalTests\": []}]},{\"name\": \"Code Coverage Checks\", \"stage\": \"code\", \"rules\": [{\"name\": \"Code Coverage Checks\",\"format\": \"istanbul\",\"stage\": \"code\",\"codeCoverage\": 80,\"regressionCheck\": true}]}]"
 
 #Sauce Labs
 test:
