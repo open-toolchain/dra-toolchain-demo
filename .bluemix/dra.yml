@@ -1,3 +1,4 @@
 ---
 parameters:
-  criteria: "[{\"name\": \"Unit Test Checks\", \"stage\": \"unittest\", \"rules\": [{\"name\": \"Unit Test Checks\",\"format\": \"mocha\",\"stage\": \"unittest\",\"percentPass\": 100,\"regressionCheck\": true,\"criticalTests\": []}]},{\"name\": \"Code Coverage Checks\", \"stage\": \"code\", \"rules\": [{\"name\": \"Code Coverage Checks\",\"format\": \"istanbul\",\"stage\": \"code\",\"codeCoverage\": 80,\"regressionCheck\": true}]}]"
+  criteria: $file(criteria.yml)
+  #criteria: "[{\"name\": \"Unit Test Checks\", \"stage\": \"unittest\", \"rules\": [{\"name\": \"Unit Test Checks\",\"format\": \"mocha\",\"stage\": \"unittest\",\"percentPass\": 100,\"regressionCheck\": true,\"criticalTests\": []}]},{\"name\": \"Code Coverage Checks\", \"stage\": \"code\", \"rules\": [{\"name\": \"Code Coverage Checks\",\"format\": \"istanbul\",\"stage\": \"code\",\"codeCoverage\": 80,\"regressionCheck\": true}]}]"
