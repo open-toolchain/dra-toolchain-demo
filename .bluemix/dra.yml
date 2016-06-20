@@ -1,6 +1,3 @@
 ---
 parameters:
-- criteria_name: "Unit Test coverage"
-  results_file_format: "Istambul"
-  min_coverage: 0.75
-  monitor_regression: true
+  criteria: "[{\"name\": \"Unit Test Checks\", \"stage\": \"unittest\", \"rules\": [{\"name\": \"Unit Test Checks\",\"format\": \"mocha\",\"stage\": \"unittest\",\"percentPass\": 100,\"regressionCheck\": true,\"criticalTests\": []}]},{\"name\": \"Code Coverage Checks\", \"stage\": \"code\", \"rules\": [{\"name\": \"Code Coverage Checks\",\"format\": \"istanbul\",\"stage\": \"code\",\"codeCoverage\": 80,\"regressionCheck\": true}]}]"

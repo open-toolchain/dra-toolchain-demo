@@ -109,9 +109,7 @@ orders-api-build:
 #Deploy Risk Analytics
 dra:
   service_id: draservicebroker
-  parameters:
-    name: "test"
-    criteria: "[{\"name\": \"Unit Test Checks\", \"stage\": \"unittest\", \"rules\": [{\"name\": \"Unit Test Checks\",\"format\": \"mocha\",\"stage\": \"unittest\",\"percentPass\": 100,\"regressionCheck\": true,\"criticalTests\": []}]},{\"name\": \"Code Coverage Checks\", \"stage\": \"code\", \"rules\": [{\"name\": \"Code Coverage Checks\",\"format\": \"istanbul\",\"stage\": \"code\",\"codeCoverage\": 80,\"regressionCheck\": true}]}]"
+  include: dra.yml
 
 #Sauce Labs
 test:
