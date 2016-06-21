@@ -109,7 +109,7 @@ orders-api-build:
 #Deploy Risk Analytics
 dra:
   service_id: draservicebroker
-#  include: dra.yml
+  include: dra.yml
 
 #Sauce Labs
 test:
