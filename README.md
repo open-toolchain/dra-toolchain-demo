@@ -1,11 +1,18 @@
-#Microservices toolchain with Deployment Risk Analytics
+#Toolchain for Simple Weather Application with Deployment Risk Analytics
 
-Get started with this sample, which is an online store that consists of three microservices: a Catalog API, an Orders API, and a UI that calls both of the APIs. The sample includes a DevOps toolchain that is preconfigured for continuous delivery, source control, blue-green deployment, functional testing, issue tracking, online editing, Deployment Risk Analytics, and messaging. 
+With this cloud-native toolchain, you can build a simple Node.js weather application. The toolchain builds from a GitHub repository, runs unit tests by using Mocha, checks code coverage by using Istanbul, requests decisions from Deployment Risk Analytics, and then deploys to IBM Bluemix.
 
 ###To get started, click this button:
-[![Deploy To Bluemix](https://new-console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://new-console.ng.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/open-toolchain/dra-toolchain-demo.git)
+[![Deploy To Bluemix](./.bluemix/create_toolchain_button.png)](https://new-console.ng.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/jparra5/weather-dra-demo.git)
 
 ---
+###Prerequisites
+
+* User must have a Bluemix account. [Sign up here](https://new-console.ng.bluemix.net/registration/)
+* User will need access to Toolchains.  [Request access here](https://new-console.ng.bluemix.net/devops/)
+* A github.com account will be needed.
+
+
 ###Learn more
 
 * For more information about toolchains, see [Custom toolchains in one click with IBM Bluemix DevOps Services](https://developer.ibm.com/devops-services/2016/06/16/open-toolchain-with-ibm-bluemix-devops-services/).

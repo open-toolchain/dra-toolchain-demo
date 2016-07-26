@@ -5,26 +5,14 @@
     "longDescription": "The GitHub Service allows you to create or use an existing GitHub repository to store your source code.",
     "type": "object",
     "properties": {
-        "catalog-api-repo_name": {
+        "demodra-repo_name": {
             "type": "string"
         },
-        "catalog-api-repo_url": {
-            "type": "string"
-        },
-        "orders-api-repo_name": {
-            "type": "string"
-        },
-        "orders-api-repo_url": {
-            "type": "string"
-        },
-        "ui-repo_name": {
-            "type": "string"
-        },
-        "ui-repo_url": {
+        "demodra-repo_url": {
             "type": "string"
         }
     },
-    "required": ["catalog-api-repo_name", "catalog-api-repo_url", "orders-api-repo_name", "orders-api-repo_url", "ui-repo_name",  "ui-repo_url"],
+    "required": ["demodra-repo_name", "demodra-repo_url"],
     "form": [
       {
         "type": "validator",
@@ -49,7 +37,7 @@
             },
             {
               "type": "text",
-              "key": "catalog-api-repo_url"
+              "key": "demodra-repo_url"
             },
             {
               "type": "icon",
@@ -57,30 +45,7 @@
             },
             {
               "type": "text",
-              "key": "catalog-api-repo_name"
-            },
-            {
-              "type": "text",
-              "key": "orders-api-repo_url"
-            },
-            {
-              "type": "icon",
-              "iconType": "right_arrow"
-            },
-            {
-              "type": "text",
-              "key": "orders-api-repo_name"
-            },  {
-              "type": "text",
-              "key": "ui-repo_url"
-            },
-            {
-              "type": "icon",
-              "iconType": "right_arrow"
-            },
-            {
-              "type": "text",
-              "key": "ui-repo_name"
+              "key": "demodra-repo_name"
             }
         ]
       }
