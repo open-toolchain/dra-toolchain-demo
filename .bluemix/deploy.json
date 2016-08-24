@@ -5,7 +5,7 @@
         "$ref": "deploy-localized-struct.json"
     },
     "description": "Feb Demo Microservices Stage Schema",
-    "longDescription": "The Delivery Pipeline for Devops Services allows you to automate your continuous deployment setup.",
+    "longDescription": "The Delivery Pipeline automates continuous deployment.",
     "type": "object",
     "properties": {
         "dev-region": {
@@ -21,7 +21,7 @@
             "type": "string"
         },
         "demodra-app-name": {
-            "description": "DemoDRA app name",
+            "description": "The name of your app",
             "type": "string"
         }
     },
@@ -34,7 +34,7 @@
         {
           "type": "text",
           "readonly": false,
-          "title": "DemoDRA App Name",
+          "title": "App name",
           "key": "demodra-app-name"
         },
         {
@@ -60,7 +60,7 @@
                 },
                 {
                   "type": "label",
-                  "title": "Dev Stage"
+                  "title": "Development stage"
                 },
                 {
                   "type": "select",
