@@ -1,6 +1,6 @@
 ---
 name: "Deployment Risk Analytics의 날씨 애플리케이션"
-description: "이 클라우드 원시 도구 체인을 사용하면 간단한 Node.js 날씨 애플리케이션을 빌드할 수 있습니다. 도구 체인은 GitHub 저장소에서 빌드하고 Mocha를 사용하여 단위 테스트를 실행하며 Istanbul을 사용하여 코드 적용 범위를 확인하고 Deployment Risk Analytics에서 의사결정을 요청한 후에 Bluemix에 배치합니다. \n\n시작하려면 **작성**을 클릭하십시오."
+description: "이 클라우드 원시 도구 체인을 사용하면 간단한 Node.js 날씨 애플리케이션을 빌드할 수 있습니다. 도구 체인은 GitHub 저장소에서 빌드하고 Mocha를 사용하여 단위 테스트를 실행하며 Istanbul을 사용하여 코드 적용 범위를 확인하고 Deployment Risk Analytics에서 의사결정을 요청한 후에 Bluemix에 배치합니다. \n\n계속하려면 **작성**을 클릭하십시오."
 $deploy.title: "MicroServices 배치 단계"
 $deploy.description: "2월 데모 마이크로서비스 단계 스키마"
 $deploy.longDescription: "Delivery Pipeline은 연속 배치를 자동화합니다."

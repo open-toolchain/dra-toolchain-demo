@@ -1,6 +1,6 @@
 ---
-name: "Application météo avec analyse des risques liés au déploiement"
-description: "Cette chaîne d'outils native pour le cloud permet de construire une application météo Node.js simple. La chaîne d'outils est construite à partir d'un référentiel GitHub, exécute des tests unitaires à l'aide de Mocha, contrôle la couverture du code en utilisant Istanbul et demande des décisions à la fonction d'analyse des risques liés au déploiement, puis est déployée dans Bluemix.\n\nPour commencer, cliquez sur **Créer**."
+name: "Application météo avec Deployment Risk Analytics"
+description: "Cette chaîne d'outils native pour le cloud permet de construire une application météo Node.js simple. La chaîne d'outils est construite à partir d'un référentiel GitHub, exécute des tests unitaires à l'aide de Mocha, contrôle la couverture du code en utilisant Istanbul et demande des décisions à Deployment Risk Analytics, puis est déployée dans Bluemix.\n\nPour commencer, cliquez sur **Créer**."
 $deploy.title: "Etape de déploiement de microservices"
 $deploy.description: "Schéma de la constitution de microservices - Démo de février"
 $deploy.longDescription: "Delivery Pipeline automatise le déploiement en continu."
