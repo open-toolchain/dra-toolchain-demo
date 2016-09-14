@@ -1,11 +1,12 @@
 ---
+#The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
 name: "Aplicativo de meteorologia com o Deployment Risk Analytics"
-description: "Com esta cadeia de ferramentas nativa na nuvem, é possível construir um aplicativo Node.js weather simples. A cadeia de ferramentas é construída a partir de um repositório GitHub, executa testes de unidade usando o Mocha, verifica a cobertura de código usando o Istambul, solicita decisões do Deployment Risk Analytics e depois implementa no Bluemix.\n\nPara iniciar, clique em **Criar**."
+description: "Com esta cadeia de ferramentas nativa na nuvem, é possível construir um aplicativo Node.js weather simples. A cadeia de ferramentas é construída a partir de um repositório GitHub, executa testes de unidade usando o Mocha, verifica a cobertura de código usando o Istanbul, solicita decisões do Deployment Risk Analytics e depois implementa no Bluemix.\n\nPara iniciar, clique em **Criar**."
 $deploy.title: "Estágio de Implementação de MicroServices"
 $deploy.description: "Esquema de Estágio de Microsserviços Feb Demo"
 $deploy.longDescription: "O Delivery Pipeline automatiza a implementação contínua."
 $deploy.appDescription: "O nome de seu app"
-$deploy.appName: "App name"
+$deploy.appName: "Nome do app"
 $region: "Região"
 $organization: "Organização"
 $space: "Espaço"
@@ -15,4 +16,3 @@ $github.description: "Esquema GitHub de Microsserviços Feb Demo"
 $github.longDescription: "Com o GitHub, é possível armazenar seu código-fonte em um repositório GitHub novo ou existente."
 $github.sourceRepository: "Repositório de Origem"
 $github.targetRepository: "Repositório de Destino"
- 

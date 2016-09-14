@@ -1,4 +1,5 @@
 ---
+#The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
 name: "Deployment Risk Analytics의 날씨 애플리케이션"
 description: "이 클라우드 원시 도구 체인을 사용하면 간단한 Node.js 날씨 애플리케이션을 빌드할 수 있습니다. 도구 체인은 GitHub 저장소에서 빌드하고 Mocha를 사용하여 단위 테스트를 실행하며 Istanbul을 사용하여 코드 적용 범위를 확인하고 Deployment Risk Analytics에서 의사결정을 요청한 후에 Bluemix에 배치합니다. \n\n계속하려면 **작성**을 클릭하십시오."
 $deploy.title: "MicroServices 배치 단계"
@@ -15,4 +16,3 @@ $github.description: "2월 데모 마이크로서비스 GitHub 스키마"
 $github.longDescription: "GitHub를 사용하면 신규 또는 기존 GitHub 저장소에 소스 코드를 저장할 수 있습니다. "
 $github.sourceRepository: "소스 저장소"
 $github.targetRepository: "대상 저장소"
- 

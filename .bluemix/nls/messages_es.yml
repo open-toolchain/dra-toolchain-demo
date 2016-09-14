@@ -1,4 +1,5 @@
 ---
+#The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
 name: "Aplicación meteorológica con análisis de riesgo de despliegue"
 description: "Con esta cadena de herramientas nativa de la nube, puede crear una aplicación meteorológica simple Node.js. La cadena de herramientas crea desde un repositorio GitHub, ejecuta pruebas de unidades utilizando Mocha, comprueba la cobertura de código utilizando Istanbul, solicita decisiones de Deployment Risk Analytics y, a continuación, despliega en Bluemix.\n\nPara comenzar, pulse **Crear**."
 $deploy.title: "MicroServices Deploy Stage"
@@ -15,4 +16,3 @@ $github.description: "Feb Demo Microservices GitHub Schema"
 $github.longDescription: "Con GitHub, puede almacenar el código fuente en un repositorio nuevo o existente de GitHub."
 $github.sourceRepository: "Repositorio de origen"
 $github.targetRepository: "Repositorio de destino"
- 

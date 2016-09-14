@@ -1,18 +1,18 @@
 ---
+#The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
 name: "Wetteranwendung mit Deployment Risk Analytics"
-description: "Mit dieser cloud-nativen Toolchain können Sie eine einfache Node.js-Wetteranwendung erstellen. Die Toolchain führt die Erstellung über ein GitHub-Repository durch, führt mithilfe von Mocha Komponententests durch, überprüft mithilfe von Istanbul die Codeabdeckung, fordert Entscheidungen von Deployment Risk Analytics an und führt dann die Bereitstellung in Bluemix durch.\n\nKlicken Sie auf 'Create', um zu beginnen."
+description: "Mit dieser cloud-nativen Toolchain können Sie eine einfache Node.js-Wetteranwendung erstellen. Die Toolchain führt die Erstellung über ein GitHub-Repository durch, führt mithilfe von Mocha Komponententests durch, überprüft mithilfe von Istanbul die Codeabdeckung, fordert Entscheidungen von Deployment Risk Analytics an und führt dann die Bereitstellung in Bluemix durch.\n\nKlicken Sie auf **Erstellen**, um zu beginnen."
 $deploy.title: "Microservices-Bereitstellungsphase"
 $deploy.description: "Feb Demo Microservices - Phasenschema"
 $deploy.longDescription: "Mit Delivery Pipeline wird die kontinuierliche Bereitstellung automatisiert."
 $deploy.appDescription: "Der Name Ihrer App"
 $deploy.appName: "Name der App"
-$region: "Bereich"
+$region: "Region"
 $organization: "Organisation"
-$space: "Leerzeichen"
+$space: "Bereich"
 $devStage: "Entwicklungsphase"
 $github.title: "Microservices-Entwicklungsphase"
 $github.description: "Feb Demo Microservices - GitHub-Schema"
 $github.longDescription: "Mit GitHub können Sie Ihren Quellcode in einem neuen oder vorhandenen GitHub-Repository speichern."
 $github.sourceRepository: "Quellenrepository"
 $github.targetRepository: "Zielrepository"
- 
