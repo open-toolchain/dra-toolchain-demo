@@ -59,7 +59,7 @@ stages:
     extension_id: ibm.devops.services.pipeline.dra_devops_gate
     CRITERIA: Unit Test and Code Coverage Checks
     APPLICATION_NAME: Weather
-    ENVIRONMENT: DEV
+    ENVIRONMENT: master
   - name: Deploy
     type: deployer
     target:
