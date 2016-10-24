@@ -36,6 +36,7 @@ stages:
     type: text
   - name: LOGICAL_ENV_NAME
     value: master
+    type: text
   jobs:
   - name: Unit Tests
     type: tester
