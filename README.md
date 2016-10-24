@@ -3,7 +3,7 @@
 With this cloud-native toolchain, you can build a simple Node.js weather application. The toolchain builds from a GitHub repository, runs unit tests by using Mocha, checks code coverage by using Istanbul, requests decisions from Deployment Risk Analytics, and then deploys to IBM Bluemix.
 
 ###To get started, click this button:
-[![Create Toolchain](https://new-console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://new-console.ng.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/open-toolchain/dra-toolchain-demo.git)
+[![Create Toolchain](https://new-console.ng.bluemix.net/devops/graphics/create_toolchain_button.png)](https://new-console.ng.bluemix.net/devops/setup/deploy/?repository=https%3A//github.com/xunrongli-ibm/dra-toolchain-demo.git)
 
 
 ---
