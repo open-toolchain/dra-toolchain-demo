@@ -4,6 +4,7 @@
     "description": "Composite Policy to check both Unit Tests and Code Coverage.",
     "rules":[
       {
+        "name": "Unit Test Rule",
         "description": "Unit Test Rule",
         "format":"mocha",
         "stage":"unittest",
@@ -16,6 +17,7 @@
         ]
       },
       {
+        "name": "Code Coverage Rule",
         "description": "Code Coverage Rule",
         "format":"istanbul",
         "stage":"code",
