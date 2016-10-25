@@ -31,6 +31,12 @@ stages:
   - name: APP_URL
     value: undefined
     type: text
+  - name: LOGICAL_APP_NAME
+    value: ${CF_APP_NAME}
+    type: text
+  - name: LOGICAL_ENV_NAME
+    value: master
+    type: text
   jobs:
   - name: Unit Tests
     type: tester
@@ -53,7 +59,7 @@ stages:
     extension_id: ibm.devops.services.pipeline.dra_devops_gate
     CRITERIA: Unit Test and Code Coverage Checks
     APPLICATION_NAME: Weather
-    ENVIRONMENT: DEV
+    ENVIRONMENT: master
   - name: Deploy
     type: deployer
     target:
