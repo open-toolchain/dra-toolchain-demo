@@ -1,7 +1,7 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
-name: "Weather application with Deployment Risk Analytics~IDS4008"
-description: "With this cloud-native toolchain, you can build a simple Node.js weather application. The toolchain builds from a GitHub repository, runs unit tests by using Mocha, checks code coverage by using Istanbul, requests decisions from Deployment Risk Analytics, and then deploys to Bluemix.\n\nTo get started, click **Create**.~IDS4009"
+name: "Weather application with DevOps Insights~IDS4008"
+description: "With this cloud-native toolchain, you can build a simple Node.js weather application. The toolchain builds from a GitHub repository, runs unit tests by using Mocha, checks code coverage by using Istanbul, requests decisions from DevOps Insights, and then deploys to Bluemix.\n\nTo get started, click **Create**.~IDS4009"
 $deploy.title: "MicroServices Deploy Stage~IDS4010"
 $deploy.description: "Feb Demo Microservices Stage Schema~IDS4011"
 $deploy.longDescription: "The Delivery Pipeline automates continuous deployment.~IDS4012"

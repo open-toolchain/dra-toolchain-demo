@@ -1,7 +1,7 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
 name: "Aplicación meteorológica con análisis de riesgo de despliegue"
-description: "Con esta cadena de herramientas nativa de la nube, puede crear una aplicación meteorológica simple Node.js. La cadena de herramientas crea desde un repositorio GitHub, ejecuta pruebas de unidades utilizando Mocha, comprueba la cobertura de código utilizando Istanbul, solicita decisiones de Deployment Risk Analytics y, a continuación, despliega en Bluemix.\n\nPara comenzar, pulse **Crear**."
+description: "Con esta cadena de herramientas nativa de la nube, puede crear una aplicación meteorológica simple Node.js. La cadena de herramientas crea desde un repositorio GitHub, ejecuta pruebas de unidades utilizando Mocha, comprueba la cobertura de código utilizando Istanbul, solicita decisiones de DevOps Insights y, a continuación, despliega en Bluemix.\n\nPara comenzar, pulse **Crear**."
 $deploy.title: "MicroServices Deploy Stage"
 $deploy.description: "Feb Demo Microservices Stage Schema"
 $deploy.longDescription: "Delivery Pipeline automatiza el despliegue continuo."
