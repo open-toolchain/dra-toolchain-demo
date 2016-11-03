@@ -2,7 +2,7 @@
 default_locale: en
 locales: 
   $ref: locales.yml
-name: "Weather application with Deployment Risk Analytics"
+name: "Weather application with DevOps Insights"
 description: "With this cloud-native toolchain, you can build a simple Node.js weather application. The toolchain builds from a GitHub repository, runs unit tests by using Mocha, checks code coverage by using Istanbul, requests decisions from Deployment Risk Analytics, and then deploys to Bluemix.\n\nTo get started, click **Create**."
 version: 0.1
 image: data:image/png;base64,$file(dra-toolchain.png,base64)
