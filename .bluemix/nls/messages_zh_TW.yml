@@ -1,7 +1,7 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
-name: "具有 Deployment Risk Analytics 的天氣應用程式"
-description: "使用此雲端原生工具鏈，您可以建置簡式 Node.js 天氣應用程式。此工具鏈會從 GitHub 儲存庫中建置，透過使用 Mocha 來執行單元測試，透過使用 Istanbul 來檢查程式碼涵蓋範圍，從 Deployment Risk Analytics 中要求決策，然後再部署至 Bluemix。\n\n若要開始，請按一下**建立**。"
+name: "具有 DevOps Insights 的天氣應用程式"
+description: "使用此雲端原生工具鏈，您可以建置簡式 Node.js 天氣應用程式。此工具鏈會從 GitHub 儲存庫中建置，透過使用 Mocha 來執行單元測試，透過使用 Istanbul 來檢查程式碼涵蓋範圍，從 DevOps Insights 中要求決策，然後再部署至 Bluemix。\n\n若要開始，請按一下**建立**。"
 $deploy.title: "微服務部署暫置"
 $deploy.description: "微服務暫置綱目展示（二月）"
 $deploy.longDescription: "Delivery Pipeline 會自動執行連續部署。"
