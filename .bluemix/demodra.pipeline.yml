@@ -44,7 +44,7 @@ stages:
   - name: Gate
     type: tester
     extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    CRITERIA: Unit Test and Code Coverage Checks
+    CRITERIA: Weather Unit Test and Code Coverage Checks
     ENVIRONMENT: master
 - name: DEV
   inputs:

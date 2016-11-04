@@ -1,6 +1,6 @@
 [
   {
-    "name":"Unit Test and Code Coverage Checks",
+    "name":"Weather Unit Test and Code Coverage Checks",
     "description": "Composite Policy to check both Unit Tests and Code Coverage.",
     "rules":[
       {
