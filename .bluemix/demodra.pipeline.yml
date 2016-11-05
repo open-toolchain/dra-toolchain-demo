@@ -7,6 +7,16 @@ stages:
     service: ${DEMODRA_API_REPO}
   triggers:
   - type: commit
+  properties:
+  - name: LOGICAL_APP_NAME
+    value: ${CF_APP_NAME}
+    type: text
+  - name: LOGICAL_ENV_NAME
+    value: master
+    type: text
+  - name: BUILD_PREFIX
+    value: master
+    type: text
   jobs:
   - name: Build
     type: builder
@@ -17,6 +27,25 @@ stages:
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
       grunt dev-setup --no-color
+  - name: Unit Test and Code Coverage
+    type: tester
+    extension_id: ibm.devops.services.pipeline.dra_upload_results
+    FORMAT_SELECT: mocha
+    LIFE_CYCLE_STAGE_SELECT: unittest
+    ADDITIONAL_FORMAT_SELECT: istanbul
+    ADDITIONAL_LIFE_CYCLE_STAGE_SELECT: code
+    ADDITIONAL_LOG_FILE: ./tests/coverage/reports/coverage-summary.json
+    LOG_FILE: ./mochatest.json
+    COMMAND: |
+      #!/bin/bash
+      export PATH=/opt/IBM/node-v4.2/bin:$PATH
+      npm install
+      grunt dev-test-cov --no-color -f
+  - name: Gate
+    type: tester
+    extension_id: ibm.devops.services.pipeline.dra_devops_gate
+    CRITERIA: Weather Unit Test and Code Coverage Checks
+    ENVIRONMENT: master
 - name: DEV
   inputs:
   - type: job
@@ -35,31 +64,12 @@ stages:
     value: ${CF_APP_NAME}
     type: text
   - name: LOGICAL_ENV_NAME
+    value: dev
+    type: text
+  - name: BUILD_PREFIX
     value: master
     type: text
   jobs:
-  - name: Unit Tests
-    type: tester
-    extension_id: ibm.devops.services.pipeline.dra_upload_results
-    APPLICATION_NAME: Weather
-    FORMAT_SELECT: mocha
-    LIFE_CYCLE_STAGE_SELECT: unittest
-    ADDITIONAL_FORMAT_SELECT: istanbul
-    ADDITIONAL_LIFE_CYCLE_STAGE_SELECT: code
-    ADDITIONAL_LOG_FILE: ./tests/coverage/reports/coverage-summary.json
-    LOG_FILE: ./mochatest.json
-    ENVIRONMENT: DEV
-    COMMAND: |
-      #!/bin/bash
-      export PATH=/opt/IBM/node-v4.2/bin:$PATH
-      npm install
-      grunt dev-test-cov --no-color -f   
-  - name: Unit Test and Code Coverage Gate
-    type: tester
-    extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    CRITERIA: Unit Test and Code Coverage Checks
-    APPLICATION_NAME: Weather
-    ENVIRONMENT: master
   - name: Deploy
     type: deployer
     target:
