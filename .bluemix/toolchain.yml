@@ -6,6 +6,8 @@ name: "Simple Cloud Foundry toolchain with DevOps Insights"
 description: "With this cloud-native toolchain, you can use DevOps Insights to gate the deployment of a simple Cloud Foundry application. By default, the toolchain uses a sample Node.js weather app, or you can link to your own GitHub repository. The toolchain runs unit tests using Mocha, checks code coverage by using Istanbul. \n\nTo get started, click **Create**."
 version: 0.1
 image: data:image/svg+xml;base64,$file(dra-toolchain.svg,base64)
+icon: data:image/svg+xml;base64,$file(icon.svg,base64)
+
 required:
  - deploy
  - github
