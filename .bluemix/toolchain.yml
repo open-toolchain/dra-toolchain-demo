@@ -8,6 +8,9 @@ version: 0.1
 image: data:image/svg+xml;base64,$file(dra-toolchain.svg,base64)
 icon: data:image/svg+xml;base64,$file(icon.svg,base64)
 
+toolchain:
+  name: "devops-insights-{{timestamp}}"
+
 required:
  - deploy
  - github
