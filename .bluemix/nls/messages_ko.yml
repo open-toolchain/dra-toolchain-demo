@@ -1,7 +1,7 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
-name: "Deployment Risk Analytics의 날씨 애플리케이션"
-description: "이 클라우드 원시 도구 체인을 사용하면 간단한 Node.js 날씨 애플리케이션을 빌드할 수 있습니다. 도구 체인은 GitHub 저장소에서 빌드하고 Mocha를 사용하여 단위 테스트를 실행하며 Istanbul을 사용하여 코드 적용 범위를 확인하고 Deployment Risk Analytics에서 의사결정을 요청한 후에 Bluemix에 배치합니다. \n\n계속하려면 **작성**을 클릭하십시오."
+name: "DevOps Insights를 사용한 단순 Cloud Foundry 도구 체인"
+description: "이 클라우드 원시 도구 체인을 사용하면 DevOps Insights를 통해 단순 Cloud Foundry 애플리케이션의 배치를 제공할 수 있습니다. 기본적으로 도구 체인은 샘플 Node.js 날씨 앱을 사용하거나 사용자가 사용자 자체 GitHub 저장소에 링크할 수 있습니다. 도구 체인은 Mocha를 사용하여 단위 테스트를 실행하고 Istanbul을 사용하여 코드 검사를 확인합니다.\n\n계속하려면 **작성**을 클릭하십시오."
 $deploy.title: "MicroServices 배치 단계"
 $deploy.description: "2월 데모 마이크로서비스 단계 스키마"
 $deploy.longDescription: "Delivery Pipeline은 연속 배치를 자동화합니다."

@@ -1,7 +1,7 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
-name: "Wetteranwendung mit DevOps Insights"
-description: "Mit dieser cloud-nativen Toolchain können Sie eine einfache Node.js-Wetteranwendung erstellen. Die Toolchain führt die Erstellung über ein GitHub-Repository durch, führt mithilfe von Mocha Komponententests durch, überprüft mithilfe von Istanbul die Codeabdeckung, fordert Entscheidungen von DevOps Insights an und führt dann die Bereitstellung in Bluemix durch.\n\nKlicken Sie auf **Erstellen**, um zu beginnen."
+name: "Einfache Cloud Foundry-Toolchain mit DevOps Insights"
+description: "Mit dieser cloud-nativen Toolchain können Sie DevOps Insights für die Bereitstellung einer einfachen Cloud Foundry-Anwendung über ein Gateway nutzen. Standardmäßig verwendet die Toolchain die Node.js-Beispiel-Wetter-App; Sie können aber auch eine Verknüpfung zu Ihrem eigenen GitHub-Repository herstellen. Die Toolchain wird mit Komponententests mit Mocha ausgeführt, die Codeabdeckung wird mit Istanbul überprüft. \n\nKlicken Sie auf **Erstellen**, um zu beginnen."
 $deploy.title: "Microservices-Bereitstellungsphase"
 $deploy.description: "Feb Demo Microservices - Phasenschema"
 $deploy.longDescription: "Mit Delivery Pipeline wird die kontinuierliche Bereitstellung automatisiert."
