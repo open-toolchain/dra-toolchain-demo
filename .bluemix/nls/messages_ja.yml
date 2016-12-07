@@ -1,6 +1,6 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
-name: "DevOps Insights を含む Simple Cloud Foundry ツールチェーン"
+name: "Simple Cloud Foundry ツールチェーンとDevOps Insights"
 description: "このクラウド・ネイティブのツールチェーンでは、DevOps Insights を使用してシンプル Cloud Foundry アプリケーションのデプロイメントをゲート制御することができます。デフォルトで、このツールチェーンはサンプル Node.js の気象アプリを使用します。あるいは、ユーザー独自の GitHub リポジトリーにリンクすることもできます。このツールチェーンは、Mocha を使用して単体テストを実行し、Istanbul を使用してコード・カバレッジをチェックします。\n\n開始するには、「作成」をクリックします。"
 $deploy.title: "MicroServices のデプロイ・ステージ"
 $deploy.description: "Feb Demo Microservices のステージのスキーマ"
