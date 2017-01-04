@@ -1,7 +1,7 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
 name: "Simple Cloud Foundry toolchain with DevOps Insights"
-description: "With this cloud-native toolchain, you can use DevOps Insights to gate the deployment of a simple Cloud Foundry application. By default, the toolchain uses a sample Node.js weather app, or you can link to your own GitHub repository. The toolchain runs unit tests using Mocha, checks code coverage by using Istanbul. \n\nTo get started, click **Create**."
+description: "With this cloud-native toolchain, you can use DevOps Insights to gate the deployment of a simple Cloud Foundry application. By default, the toolchain uses a sample Node.js weather app, or you can link to your own GitHub repository. The toolchain runs unit tests using Mocha, checks code coverage by using Istanbul. \n\nThis toolchain uses tools that are part of the Continuous Delivery service. If an instance of that service isn't already in your organization, when you click **Create**, it is automatically added at no cost to you. For more information and terms, see the [Bluemix catalog](/catalog/services/continuous-delivery/).\n\nTo get started, click **Create**."
 $deploy.title: "MicroServices Deploy Stage"
 $deploy.description: "Feb Demo Microservices Stage Schema"
 $deploy.longDescription: "The Delivery Pipeline automates continuous deployment."
