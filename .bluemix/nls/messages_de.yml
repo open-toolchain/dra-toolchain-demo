@@ -1,7 +1,7 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
 name: "Einfache Cloud Foundry-Toolchain mit DevOps Insights"
-description: "Mit dieser cloud-nativen Toolchain können Sie DevOps Insights für die Bereitstellung einer einfachen Cloud Foundry-Anwendung über ein Gateway nutzen. Standardmäßig verwendet die Toolchain die Node.js-Beispiel-Wetter-App; Sie können aber auch eine Verknüpfung zu Ihrem eigenen GitHub-Repository herstellen. Die Toolchain wird mit Komponententests mit Mocha ausgeführt, die Codeabdeckung wird mit Istanbul überprüft. \n\nKlicken Sie auf **Erstellen**, um zu beginnen."
+description: "Mit dieser cloud-nativen Toolchain können Sie DevOps Insights für die Bereitstellung einer einfachen Cloud Foundry-Anwendung über ein Gateway nutzen. Standardmäßig verwendet die Toolchain die Node.js-Beispiel-Wetter-App; Sie können aber auch eine Verknüpfung zu Ihrem eigenen GitHub-Repository herstellen. Die Toolchain wird mit Komponententests mit Mocha ausgeführt, die Codeabdeckung wird mit Istanbul überprüft. \n\nDiese Toolchain verwendet Tools, die Teil des Continuous Delivery-Service sind. Wenn sich noch keine Instanz dieses Service in Ihrer Organisation befindet, wird sie automatisch hinzugefügt, wenn Sie auf **Erstellen** klicken, ohne dass für Sie Kosten anfallen. Weitere Informationen und Bedingungen finden Sie im [Bluemix-Katalog](/catalog/services/continuous-delivery/).\n\nKlicken Sie auf **Erstellen**, um zu beginnen."
 $deploy.title: "Microservices-Bereitstellungsphase"
 $deploy.description: "Feb Demo Microservices - Phasenschema"
 $deploy.longDescription: "Mit Delivery Pipeline wird die kontinuierliche Bereitstellung automatisiert."
