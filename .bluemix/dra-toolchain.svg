@@ -267,16 +267,16 @@
 		<line id="svg_193" class="st0" x1="43.7" y1="105" x2="43.6" y2="105"/>
 		<line id="svg_194" class="st0" x1="45.6" y1="104.8" x2="45.5" y2="104.8"/>
 	</g>
-	<text id="svg_196" transform="matrix(1 0 0 1 0.2 17.45)" class="st33 st34">CODE</text>
-	<text id="svg_197" transform="matrix(1 0 0 1 89.4 17.45)" class="st33 st34">DELIVER</text>
-	<text id="svg_198" transform="matrix(1 0 0 1 178.4 17.45)" class="st33 st34">RUN</text>
-	<text id="svg_199" transform="matrix(1 0 0 1 267.4 17.45)" class="st33 st34">LEARN</text>
-	<text id="svg_200" transform="matrix(1 0 0 1 2.4 128.45)" class="st33 st35">REPOSITORY</text>
-	<text id="svg_201" transform="matrix(1 0 0 1 20.4 140.45)" class="st33 st35">GitHub</text>
-	<text id="svg_202" transform="matrix(1 0 0 1 18.4 246.45)" class="st33 st35">WEB IDE</text>
-	<text id="svg_203" transform="matrix(1 0 0 1 99.4 128.45)" class="st33 st35">PIPELINE</text>
-	<text id="svg_204" transform="matrix(1 0 0 1 185.4 128.45)" class="st33 st35">BLUEMIX</text>
-	<text id="svg_205" transform="matrix(1 0 0 1 289.4 242.45)" class="st33 st35">DEVOPS</text>
-	<text id="svg_206" transform="matrix(1 0 0 1 286.4 253.45)" class="st33 st35">INSIGHTS</text>
+	<text id="code" transform="matrix(1 0 0 1 0.2 17.45)" class="st33 st34">CODE</text>
+	<text id="deliver" transform="matrix(1 0 0 1 89.4 17.45)" class="st33 st34">DELIVER</text>
+	<text id="run" transform="matrix(1 0 0 1 178.4 17.45)" class="st33 st34">RUN</text>
+	<text id="learn" transform="matrix(1 0 0 1 267.4 17.45)" class="st33 st34">LEARN</text>
+	<text id="repository" transform="matrix(1 0 0 1 2.4 128.45)" class="st33 st35">REPOSITORY</text>
+	<text id="gitHub" transform="matrix(1 0 0 1 20.4 140.45)" class="st33 st35">GitHub</text>
+	<text id="webIde" transform="matrix(1 0 0 1 18.4 246.45)" class="st33 st35">WEB IDE</text>
+	<text id="pipeline" transform="matrix(1 0 0 1 99.4 128.45)" class="st33 st35">PIPELINE</text>
+	<text id="bluemix" transform="matrix(1 0 0 1 185.4 128.45)" class="st33 st35">BLUEMIX</text>
+	<text id="devops" transform="matrix(1 0 0 1 289.4 242.45)" class="st33 st35">DEVOPS</text>
+	<text id="insights" transform="matrix(1 0 0 1 286.4 253.45)" class="st33 st35">INSIGHTS</text>
 </g>
 </svg>
