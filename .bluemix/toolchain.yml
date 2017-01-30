@@ -35,9 +35,12 @@ demodra-build:
       env:
         DEMODRA_API_REPO: "demodra-repo"
         CF_APP_NAME: "{{deploy.parameters.demodra-app-name}}"
-        DEV_SPACE_NAME: "{{deploy.parameters.dev-space}}"
-        DEV_ORG_NAME: "{{deploy.parameters.dev-organization}}"
-        DEV_REGION_ID: "{{deploy.parameters.dev-region}}"
+        STAGING_SPACE_NAME: "{{deploy.parameters.staging-space}}"
+        STAGING_ORG_NAME: "{{deploy.parameters.staging-organization}}"
+        STAGING_REGION_ID: "{{deploy.parameters.staging-region}}"
+        PROD_SPACE_NAME: "{{deploy.parameters.prod-space}}"
+        PROD_ORG_NAME: "{{deploy.parameters.prod-organization}}"
+        PROD_REGION_ID: "{{deploy.parameters.prod-region}}"
       execute: true
     services: ["demodra-repo"]
   hidden: [form, description]
