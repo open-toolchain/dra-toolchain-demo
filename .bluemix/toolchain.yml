@@ -58,8 +58,7 @@ deploy:
     $ref: deploy.json
   service-category: pipeline
   parameters:
-    dev-space: dev
-    qa-space: qa
+    staging-space: staging
     prod-space: prod
     demodra-app-name: "{{demodra-repo.parameters.repo_name}}"
 
