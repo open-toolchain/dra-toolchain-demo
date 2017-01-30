@@ -82,11 +82,11 @@ stages:
       #cf logs "${CF_APP_NAME}" --recent
 - name: GATE
   inputs:
-  - type: git
-    branch: master
-    service: ${DEMODRA_API_REPO}
+  - type: job
+    stage: BUILD
+    job: Build
   triggers:
-  - type: commit
+  - type: stage
   properties:
   - name: LOGICAL_APP_NAME
     value: ${CF_APP_NAME}
