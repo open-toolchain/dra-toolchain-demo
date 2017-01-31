@@ -41,12 +41,7 @@ stages:
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
       grunt dev-test-cov --no-color -f
-  - name: Gate
-    type: tester
-    extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    CRITERIA: Weather Unit Test and Code Coverage Checks
-    ENVIRONMENT: master
-- name: DEV
+- name: STAGING
   inputs:
   - type: job
     stage: BUILD
@@ -64,7 +59,7 @@ stages:
     value: ${CF_APP_NAME}
     type: text
   - name: LOGICAL_ENV_NAME
-    value: dev
+    value: STAGING
     type: text
   - name: BUILD_PREFIX
     value: master
@@ -73,14 +68,76 @@ stages:
   - name: Deploy
     type: deployer
     target:
-      region_id: ${DEV_REGION_ID}
-      organization: ${DEV_ORG_NAME}
-      space: ${DEV_SPACE_NAME}
+      region_id: ${STAGING_REGION_ID}
+      organization: ${STAGING_ORG_NAME}
+      space: ${STAGING_SPACE_NAME}
       application: ${CF_APP_NAME}
     script: |
       #!/bin/bash
       # Push app
-      export CF_APP_NAME="dev-$CF_APP"
+      export CF_APP_NAME="staging-$CF_APP"
+      cf push "${CF_APP_NAME}" -n ${CF_APP_NAME}
+      export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
+      # View logs
+      #cf logs "${CF_APP_NAME}" --recent
+- name: GATE
+  inputs:
+  - type: job
+    stage: BUILD
+    job: Build
+  triggers:
+  - type: stage
+  properties:
+  - name: LOGICAL_APP_NAME
+    value: ${CF_APP_NAME}
+    type: text
+  - name: LOGICAL_ENV_NAME
+    value: master
+    type: text
+  - name: BUILD_PREFIX
+    value: master
+    type: text
+  jobs:
+  - name: Gate
+    type: tester
+    extension_id: ibm.devops.services.pipeline.dra_devops_gate
+    CRITERIA: Weather Unit Test and Code Coverage Checks
+    ENVIRONMENT: master
+- name: PRODUCTION
+  inputs:
+  - type: job
+    stage: BUILD
+    job: Build
+  triggers:
+  - type: stage
+  properties:
+  - name: CF_APP_NAME
+    value: undefined
+    type: text
+  - name: APP_URL
+    value: undefined
+    type: text
+  - name: LOGICAL_APP_NAME
+    value: ${CF_APP_NAME}
+    type: text
+  - name: LOGICAL_ENV_NAME
+    value: PRODUCTION
+    type: text
+  - name: BUILD_PREFIX
+    value: master
+    type: text
+  jobs:
+  - name: Deploy
+    type: deployer
+    target:
+      region_id: ${PROD_REGION_ID}
+      organization: ${PROD_ORG_NAME}
+      space: ${PROD_SPACE_NAME}
+      application: ${CF_APP_NAME}
+    script: |
+      #!/bin/bash
+      # Push app
+      export CF_APP_NAME="$CF_APP"
       cf push "${CF_APP_NAME}" -n ${CF_APP_NAME}
       export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
       # View logs

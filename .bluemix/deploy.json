@@ -8,15 +8,27 @@
     "longDescription": "The Delivery Pipeline automates continuous deployment.",
     "type": "object",
     "properties": {
-        "dev-region": {
+        "staging-region": {
             "description": "The bluemix region",
             "type": "string"
         },
-        "dev-organization": {
+        "staging-organization": {
             "description": "The bluemix org",
             "type": "string"
         },
-        "dev-space": {
+        "staging-space": {
+            "description": "The bluemix space",
+            "type": "string"
+        },
+        "prod-region": {
+            "description": "The bluemix region",
+            "type": "string"
+        },
+        "prod-organization": {
+            "description": "The bluemix org",
+            "type": "string"
+        },
+        "prod-space": {
             "description": "The bluemix space",
             "type": "string"
         },
@@ -25,7 +37,7 @@
             "type": "string"
         }
     },
-    "required": ["dev-region", "dev-organization", "dev-space", "demodra-app-name"],
+    "required": ["staging-region", "staging-organization", "staging-space", "prod-region", "prod-organization", "prod-space", "demodra-app-name"],
     "form": [
        {
           "type": "validator",
@@ -60,19 +72,36 @@
                 },
                 {
                   "type": "label",
-                  "title": "Development stage"
+                  "title": "Staging stage"
                 },
                 {
                   "type": "select",
-                  "key": "dev-region"
+                  "key": "staging-region"
                 },
                 {
                   "type": "select",
-                  "key": "dev-organization"
+                  "key": "staging-organization"
                 },
                 {
                   "type": "select",
-                  "key": "dev-space",
+                  "key": "staging-space",
+                  "readonly": false
+                },
+                {
+                  "type": "label",
+                  "title": "Production stage"
+                },
+                {
+                  "type": "select",
+                  "key": "prod-region"
+                },
+                {
+                  "type": "select",
+                  "key": "prod-organization"
+                },
+                {
+                  "type": "select",
+                  "key": "prod-space",
                   "readonly": false
                 }
             ]
