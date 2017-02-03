@@ -11,9 +11,6 @@ stages:
   - name: LOGICAL_APP_NAME
     value: ${CF_APP_NAME}
     type: text
-  - name: LOGICAL_ENV_NAME
-    value: master
-    type: text
   - name: BUILD_PREFIX
     value: master
     type: text
