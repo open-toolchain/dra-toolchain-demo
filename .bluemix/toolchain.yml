@@ -22,7 +22,7 @@ demodra-repo:
     repo_name: "{{github.parameters.demodra-repo_name}}"
     repo_url: "{{github.parameters.demodra-repo_url}}"
     type: clone
-    has_issues: false
+    has_issues: true
   hidden: [form, description]
 
 # Pipelines
