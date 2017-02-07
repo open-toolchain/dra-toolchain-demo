@@ -137,10 +137,12 @@
     </g>
     <g id="svg_132">
       <g id="svg_133">
-        <polyline id="svg_134" class="st5" points="-61.913 58.228 -61.913 41.9 210.3 41.9 210.3 54.9"/>
+        <polyline id="svg_134" class="st5" points="-61.175 56.014 -61.175 41.9 210.3 41.9 210.3 54.9"/>
         <g id="svg_135">
           <polygon id="svg_136" class="st6" points="315,159.3 310,168 305,159.3 &#9;&#9;&#9;&#9;"/>
-          <polygon id="polygon-1" class="st6" points="-66.506 52.67 -61.913 59.526 -57.32 52.67" transform=""/>
+          <g transform="matrix(1, 0, 0, 1, -371, -109.300003)">
+            <polygon id="polygon-2" class="st6" points="315 161.3 310 170 305 161.3"/>
+          </g>
         </g>
       </g>
     </g>
