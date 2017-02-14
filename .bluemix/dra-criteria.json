@@ -11,8 +11,8 @@
         "percentPass":100,
         "regressionCheck":true,
         "criticalTests":[
-          "Get Weather 2 with incomplete zip code",
-          "Get Weather 2 with without zip code",
+          "Get Weather with incomplete zip code",
+          "Get Weather with without zip code",
           "Get Weather with valid zip code"
         ]
       },

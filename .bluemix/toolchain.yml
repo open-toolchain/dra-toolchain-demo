@@ -34,6 +34,7 @@ demodra-build:
       content: $file(demodra.pipeline.yml)
       env:
         DEMODRA_API_REPO: "demodra-repo"
+        LOGICAL_APP_NAME: "Weather Application"
         CF_APP_NAME: "{{deploy.parameters.demodra-app-name}}"
         STAGING_SPACE_NAME: "{{deploy.parameters.staging-space}}"
         STAGING_ORG_NAME: "{{deploy.parameters.staging-organization}}"
