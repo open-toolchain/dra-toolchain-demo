@@ -73,4 +73,4 @@ github:
   service-category: githubpublic
   parameters:
     demodra-repo_name: "{{name}}"
-    demodra-repo_url: https://github.com/jparra5/DemoDRA-1
+    demodra-repo_url: https://github.com/open-toolchain/DemoDRA
