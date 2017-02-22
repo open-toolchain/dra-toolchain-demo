@@ -9,7 +9,7 @@ stages:
   - type: commit
   properties:
   - name: LOGICAL_APP_NAME
-    value: ${CF_APP_NAME}
+    value: ${LOGICAL_APP_NAME}
     type: text
   - name: BUILD_PREFIX
     value: master
@@ -53,7 +53,7 @@ stages:
     value: undefined
     type: text
   - name: LOGICAL_APP_NAME
-    value: ${CF_APP_NAME}
+    value: ${LOGICAL_APP_NAME}
     type: text
   - name: LOGICAL_ENV_NAME
     value: STAGING
@@ -86,7 +86,7 @@ stages:
   - type: stage
   properties:
   - name: LOGICAL_APP_NAME
-    value: ${CF_APP_NAME}
+    value: ${LOGICAL_APP_NAME}
     type: text
   - name: BUILD_PREFIX
     value: master
@@ -111,7 +111,7 @@ stages:
     value: undefined
     type: text
   - name: LOGICAL_APP_NAME
-    value: ${CF_APP_NAME}
+    value: ${LOGICAL_APP_NAME}
     type: text
   - name: LOGICAL_ENV_NAME
     value: PRODUCTION
