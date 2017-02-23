@@ -1,3 +1,2 @@
----
 parameters:
-  criteria: $file(dra-criteria.json)
+  criteria: "[\r\n  {\r\n    \"name\":\"Weather Unit Test and Code Coverage Checks\",\r\n    \"description\": \"Composite Policy to check both Unit Tests and Code Coverage.\",\r\n    \"rules\":[\r\n      {\r\n        \"name\": \"Unit Test Rule\",\r\n        \"description\": \"Unit Test Rule\",\r\n        \"format\":\"mocha\",\r\n        \"stage\":\"unittest\",\r\n        \"percentPass\":100,\r\n        \"regressionCheck\":true,\r\n        \"criticalTests\":[\r\n          \"Get Weather with incomplete zip code\",\r\n          \"Get Weather with without zip code\",\r\n          \"Get Weather with valid zip code\"\r\n        ]\r\n      },\r\n      {\r\n        \"name\": \"Code Coverage Rule\",\r\n        \"description\": \"Code Coverage Rule\",\r\n        \"format\":\"istanbul\",\r\n        \"stage\":\"code\",\r\n        \"codeCoverage\":80,\r\n        \"regressionCheck\":true\r\n      }\r\n    ]\r\n  }\r\n]\r\n"

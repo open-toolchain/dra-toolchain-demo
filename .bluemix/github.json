@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "MicroServices Deploy Stage",
-    "localized-struct":{
+    "localized-struct": {
         "$ref": "github-localized-struct.json"
     },
+    "title": "Microservices deployment stage",
     "description": "Feb Demo Microservices GitHub Schema",
     "longDescription": "With GitHub, you can store your source code in a new or an existing GitHub repository.",
     "type": "object",
@@ -15,38 +15,45 @@
             "type": "string"
         }
     },
-    "required": ["demodra-repo_name", "demodra-repo_url"],
+    "required": [
+        "demodra-repo_name",
+        "demodra-repo_url"
+    ],
     "form": [
-      {
-        "type": "table",
-        "columnCount": 3,
-        "widths": ["47%", "6%", "47%"],
-        "items": [
-            {
-              "type": "label",
-              "title": "Source Repository"
-            },
-            {
-              "type": "label",
-              "title": ""
-            },
-            {
-              "type": "label",
-              "title": "Target Repository"
-            },
-            {
-              "type": "text",
-              "key": "demodra-repo_url"
-            },
-            {
-              "type": "icon",
-              "iconType": "right_arrow"
-            },
-            {
-              "type": "text",
-              "key": "demodra-repo_name"
-            }
-        ]
-      }
-    ] 
+        {
+            "type": "table",
+            "columnCount": 3,
+            "widths": [
+                "47%",
+                "6%",
+                "47%"
+            ],
+            "items": [
+                {
+                    "type": "label",
+                    "title": "Source Repository"
+                },
+                {
+                    "type": "label",
+                    "title": ""
+                },
+                {
+                    "type": "label",
+                    "title": "Target Repository"
+                },
+                {
+                    "type": "text",
+                    "key": "demodra-repo_url"
+                },
+                {
+                    "type": "icon",
+                    "iconType": "right_arrow"
+                },
+                {
+                    "type": "text",
+                    "key": "demodra-repo_name"
+                }
+            ]
+        }
+    ]
 }

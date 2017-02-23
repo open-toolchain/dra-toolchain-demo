@@ -1,76 +1,79 @@
----
+version: '2'
 default_locale: en
 locales:
   $ref: locales.yml
-name: "Simple Cloud Foundry toolchain with DevOps Insights"
-description: "With this cloud-native toolchain, you can use DevOps Insights to gate the deployment of a simple Cloud Foundry application. By default, the toolchain uses a sample Node.js weather app, or you can link to your own GitHub repository. The toolchain runs unit tests using Mocha, checks code coverage by using Istanbul. \n\nThis toolchain uses tools that are part of the Continuous Delivery service. If an instance of that service isn't already in your organization, when you click **Create**, it is automatically added at no cost to you. For more information and terms, see the [Bluemix catalog](/catalog/services/continuous-delivery/).\n\nTo get started, click **Create**."
-version: 0.1
-image: data:image/svg+xml;base64,$file(dra-toolchain.svg?localize,base64)
-icon: data:image/svg+xml;base64,$file(icon.svg,base64)
+template:
+  name: Simple Cloud Foundry toolchain with DevOps Insights
+  description: >-
+    With this cloud-native toolchain, you can use DevOps Insights to gate the
+    deployment of a simple Cloud Foundry application. By default, the toolchain
+    uses a sample Node.js weather app, or you can link to your own GitHub
+    repository. The toolchain runs unit tests using Mocha, checks code coverage
+    by using Istanbul. 
 
+
+    This toolchain uses tools that are part of the Continuous Delivery service.
+    If an instance of that service isn't already in your organization, when you
+    click **Create**, it is automatically added at no cost to you. For more
+    information and terms, see the [Bluemix
+    catalog](/catalog/services/continuous-delivery/).
+
+
+    To get started, click **Create**.
+  header: '![](dra-toolchain.svg?localize "header image")'
+  icon: icon.svg
+  required:
+    - demodra-build
+    - demodra-repo
+  info:
+    git url: >-
+      [https://github.com/open-toolchain/dra-toolchain-demo](https://github.com/open-toolchain/dra-toolchain-demo)
+    git branch: '[master](https://github.com/open-toolchain/dra-toolchain-demo/tree/master)'
 toolchain:
-  name: "devops-insights-{{timestamp}}"
-
-required:
- - deploy
- - github
-
-# Github repos
-demodra-repo:
-  service_id: githubpublic
-  parameters:
-    repo_name: "{{github.parameters.demodra-repo_name}}"
-    repo_url: "{{github.parameters.demodra-repo_url}}"
-    type: clone
-    has_issues: true
-  hidden: [form, description]
-
-# Pipelines
-demodra-build:
-  service_id: pipeline
-  parameters:
-    name: "{{name}}"
-    configuration:
-      content: $file(demodra.pipeline.yml)
-      env:
-        DEMODRA_API_REPO: "demodra-repo"
-        LOGICAL_APP_NAME: "Weather Application"
-        CF_APP_NAME: "{{deploy.parameters.demodra-app-name}}"
-        STAGING_SPACE_NAME: "{{deploy.parameters.staging-space}}"
-        STAGING_ORG_NAME: "{{deploy.parameters.staging-organization}}"
-        STAGING_REGION_ID: "{{deploy.parameters.staging-region}}"
-        PROD_SPACE_NAME: "{{deploy.parameters.prod-space}}"
-        PROD_ORG_NAME: "{{deploy.parameters.prod-organization}}"
-        PROD_REGION_ID: "{{deploy.parameters.prod-region}}"
-      execute: true
-    services: ["demodra-repo"]
-  hidden: [form, description]
-
-#DevOps Insights
-dra:
-  service_id: draservicebroker
-  include: dra.yml
-
-
-#Web IDE
-webide:
-  service_id: orion
-
-#Deployment
-deploy:
-  schema:
-    $ref: deploy.json
-  service-category: pipeline
-  parameters:
-    staging-space: staging
-    prod-space: prod
-    demodra-app-name: "{{demodra-repo.parameters.repo_name}}"
-
-#Github
-github:
-  schema:
-    $ref: github.json
-  service-category: githubpublic
-  parameters:
-    demodra-repo_name: "{{name}}"
-    demodra-repo_url: https://github.com/open-toolchain/DemoDRA
+  name: 'devops-insights-{{timestamp}}'
+services:
+  demodra-repo:
+    service_id: githubpublic
+    parameters:
+      repo_name: '{{form.githubpublic.parameters.demodra-repo_name}}'
+      repo_url: '{{form.githubpublic.parameters.demodra-repo_url}}'
+      type: clone
+      has_issues: true
+  demodra-build:
+    service_id: pipeline
+    parameters:
+      services:
+        - demodra-repo
+      name: '{{toolchain.name}}'
+      configuration:
+        content: $file(demodra.pipeline.yml)
+        env:
+          DEMODRA_API_REPO: demodra-repo
+          LOGICAL_APP_NAME: Weather Application
+          CF_APP_NAME: '{{form.pipeline.parameters.demodra-app-name}}'
+          STAGING_SPACE_NAME: '{{form.pipeline.parameters.staging-space}}'
+          STAGING_ORG_NAME: '{{form.pipeline.parameters.staging-organization}}'
+          STAGING_REGION_ID: '{{form.pipeline.parameters.staging-region}}'
+          PROD_SPACE_NAME: '{{form.pipeline.parameters.prod-space}}'
+          PROD_ORG_NAME: '{{form.pipeline.parameters.prod-organization}}'
+          PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
+        execute: true
+  dra:
+    service_id: draservicebroker
+    $ref: dra.yml
+  webide:
+    service_id: orion
+form:
+  pipeline:
+    parameters:
+      staging-space: staging
+      prod-space: prod
+      demodra-app-name: '{{services.demodra-repo.parameters.repo_name}}'
+    schema:
+      $ref: deploy.json
+  githubpublic:
+    parameters:
+      demodra-repo_name: '{{toolchain.name}}'
+      demodra-repo_url: 'https://github.com/open-toolchain/DemoDRA'
+    schema:
+      $ref: github.json
