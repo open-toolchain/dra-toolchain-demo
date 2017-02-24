@@ -77,6 +77,17 @@ stages:
       export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
       # View logs
       #cf logs "${CF_APP_NAME}" --recent
+  - name: FVT Test
+    type: tester
+    extension_id: ibm.devops.services.pipeline.dra_upload_results
+    FORMAT_SELECT: mocha
+    LIFE_CYCLE_STAGE_SELECT: fvt
+    LOG_FILE: ./mochafvt.json
+    COMMAND: |
+      #!/bin/bash
+      export PATH=/opt/IBM/node-v4.2/bin:$PATH
+      npm install
+      grunt fvt-test --no-color -f
 - name: GATE
   inputs:
   - type: job
@@ -95,7 +106,7 @@ stages:
   - name: Gate
     type: tester
     extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    CRITERIA: Weather Unit Test and Code Coverage Checks
+    CRITERIA: Weather Unit Test, Code Coverage, and FVT Checks
 - name: PRODUCTION
   inputs:
   - type: job
