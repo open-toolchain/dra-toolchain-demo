@@ -106,7 +106,8 @@ stages:
   - name: Gate
     type: tester
     extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    CRITERIA: Weather Unit Test and Code Coverage Checks
+    CRITERIA: Weather Unit Test Code Coverage and FVT Checks
+
 - name: PRODUCTION
   inputs:
   - type: job

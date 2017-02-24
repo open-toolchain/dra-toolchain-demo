@@ -1,7 +1,7 @@
 [
   {
-    "name":"Weather Unit Test, Code Coverage and FVT Checks",
-    "description": "Composite Policy to check Unit Tests, Code Coverage and FVT.",
+    "name":"Weather Unit Test Code Coverage and FVT Checks",
+    "description": "Composite Policy to check Unit Tests Code Coverage and FVT.",
     "rules":[
       {
         "name": "Unit Test Rule",
