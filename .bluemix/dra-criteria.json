@@ -1,7 +1,7 @@
 [
   {
-    "name":"Weather Unit Test and Code Coverage Checks",
-    "description": "Composite Policy to check both Unit Tests and Code Coverage.",
+    "name":"Weather Unit Test, Code Coverage and FVT Checks",
+    "description": "Composite Policy to check Unit Tests, Code Coverage and FVT.",
     "rules":[
       {
         "name": "Unit Test Rule",
@@ -23,6 +23,16 @@
         "stage":"code",
         "codeCoverage":80,
         "regressionCheck":true
+      },
+      {
+        "name": "FVT Test Rule",
+        "description": "FVT Test Rule",
+        "format":"mocha",
+        "stage":"fvt",
+        "percentPass":100,
+        "regressionCheck":true,
+        "criticalTests":[
+        ]
       }
     ]
   }
