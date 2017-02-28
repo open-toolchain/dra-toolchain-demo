@@ -9,7 +9,7 @@ template:
     deployment of a simple Cloud Foundry application. By default, the toolchain
     uses a sample Node.js weather app, or you can link to your own GitHub
     repository. The toolchain runs unit tests using Mocha, checks code coverage
-    by using Istanbul. 
+    by using Istanbul.
 
 
     This toolchain uses tools that are part of the Continuous Delivery service.
@@ -76,6 +76,6 @@ form:
   githubpublic:
     parameters:
       demodra-repo_name: '{{toolchain.name}}'
-      demodra-repo_url: 'https://github.com/open-toolchain/DemoDRA'
+      demodra-repo_url: 'https://gitlab.com/uparulekar/LabDemoDRA'
     schema:
       $ref: github.json
