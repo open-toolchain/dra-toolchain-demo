@@ -76,6 +76,6 @@ form:
   githubpublic:
     parameters:
       demodra-repo_name: '{{toolchain.name}}'
-      demodra-repo_url: 'https://gitlab.com/uparulekar/LabDemoDRA'
+      demodra-repo_url: 'https://git.ng.bluemix.net/uparulekar/LabngDemoDRA'
     schema:
       $ref: github.json
