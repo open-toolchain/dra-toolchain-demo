@@ -9,7 +9,7 @@ template:
     deployment of a simple Cloud Foundry application. By default, the toolchain
     uses a sample Node.js weather app, or you can link to your own GitHub
     repository. The toolchain runs unit tests using Mocha, checks code coverage
-    by using Istanbul. 
+    by using Istanbul.
 
 
     This toolchain uses tools that are part of the Continuous Delivery service.
@@ -31,6 +31,13 @@ template:
     git branch: '[master](https://github.com/open-toolchain/dra-toolchain-demo/tree/master)'
 toolchain:
   name: 'devops-insights-{{timestamp}}'
+  template:
+    getting_started: |-
+      **Your toolchain is ready!**
+
+      **Quick start:** Commit a change to the Git repo to trigger a new build and deployment. See results in the Deployment Risk dashboard in DevOps Insights.
+
+      For step-by-step instructions, see the [tutorial](https://www.ibm.com/devops/method/tutorials/tutorial_toolchain_devops_insights?walkthrough_step=0) for this toolchain.
 services:
   demodra-repo:
     service_id: githubpublic
