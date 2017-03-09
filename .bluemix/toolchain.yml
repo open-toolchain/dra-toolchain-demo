@@ -20,7 +20,7 @@ template:
 
 
     To get started, click **Create**.
-  header: '![](dra-toolchain.svg?localize "header image")'
+  header: '![](dra-toolchain.svg?localize)'
   icon: icon.svg
   required:
     - demodra-build
