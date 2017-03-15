@@ -1,4 +1,3 @@
 parameters:
   criteria:
-    $ref: "dra-criteria.json"
-    $refType: text
+    $text: dra-criteria.json
