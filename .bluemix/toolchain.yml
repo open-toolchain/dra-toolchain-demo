@@ -53,8 +53,7 @@ services:
       name: '{{toolchain.name}}'
       configuration:
         content:
-          $ref: demodra.pipeline.yml
-          $refType: text
+          $text: demodra.pipeline.yml
         env:
           DEMODRA_API_REPO: demodra-repo
           LOGICAL_APP_NAME: Weather Application
