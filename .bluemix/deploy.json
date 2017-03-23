@@ -1,11 +1,17 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "MicroServices Deploy Stage",
-    "localized-struct":{
-        "$ref": "deploy-localized-struct.json"
+    "messages": {
+       "$i18n": "locales.yml"
     },
-    "description": "Feb Demo Microservices Stage Schema",
-    "longDescription": "The Delivery Pipeline automates continuous deployment.",
+     "title": {
+      "$ref": "#/messages/deploy.title"
+    },
+    "description": {
+      "$ref": "#/messages/deploy.description"
+    },
+    "longDescription": {
+      "$ref": "#/messages/deploy.longDescription"
+    },
     "type": "object",
     "properties": {
         "staging-region": {
@@ -33,7 +39,9 @@
             "type": "string"
         },
         "demodra-app-name": {
-            "description": "The name of your app",
+            "description": {
+              "$ref": "#/messages/deploy.appDescription"
+            },
             "type": "string"
         }
     },
@@ -46,7 +54,9 @@
         {
           "type": "text",
           "readonly": false,
-          "title": "App name",
+          "title": {
+            "$ref": "#/messages/deploy.appName"
+          },
           "key": "demodra-app-name"
         },
         {
@@ -60,19 +70,27 @@
                 },
                 {
                   "type": "label",
-                  "title": "Region"
+                  "title": {
+                    "$ref": "#/messages/region"
+                  }
                 },
                 {
                   "type": "label",
-                  "title": "Organization"
+                  "title": {
+                    "$ref": "#/messages/organization"
+                  }
                 },
                 {
                   "type": "label",
-                  "title": "Space"
+                  "title": {
+                    "$ref": "#/messages/space"
+                  }
                 },
                 {
                   "type": "label",
-                  "title": "Staging stage"
+                  "title": {
+                    "$ref": "#/messages/devStage"
+                  }
                 },
                 {
                   "type": "select",
@@ -89,7 +107,9 @@
                 },
                 {
                   "type": "label",
-                  "title": "Production stage"
+                  "title": {
+                    "$ref": "#/messages/prodStage"
+                  }
                 },
                 {
                   "type": "select",
