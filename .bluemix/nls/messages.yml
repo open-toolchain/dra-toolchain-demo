@@ -30,5 +30,5 @@ bluemix: "BLUEMIX"
 webIde: "WEB IDE"
 devops: "DEVOPS"
 insights: "INSIGHTS"
-headerSVG.issueTracker: "ISSUE TRACKER"
+issueTracker: "ISSUE TRACKER"
 
