@@ -1,0 +1,2 @@
+---
+template.gettingStarted: "**Ihre Toolchain steht bereit!**\n**Schnelleinstieg:** Schreiben Sie eine Änderung im Git-Repository fest, um einen neuen Build und eine neue Bereitstellung auszulösen. Die Ergebnisse sehen Sie im Dashboard für Bereitstellungsrisiken (Deployment Risk) von DevOps Insights. Schrittweise Anleitungen bietet das [Lernprogramm](https://www.ibm.com/devops/method/tutorials/tutorial_toolchain_devops_insights) für diese Toolchain. "

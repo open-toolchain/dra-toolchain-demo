@@ -2,7 +2,6 @@
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
 template.name: "[G'Ｓｉｍｐｌｅ Ｃｌｏｕｄ Foundry toolchain with DevOps Insightsฏูİı｜]"
 template.description: "[G'Ｗｉｔｈ ｔｈｉｓ ｃｌｏｕｄ-ｎａｔｉｖｅ ｔｏｏｌｃｈａｉｎ, ｙｏｕ ｃａｎ ｕｓｅ ＤｅｖＯｐｓ Ｉｎｓｉｇｈｔｓ ｔｏ ｇａｔｅ ｔｈｅ ｄｅｐｌｏｙｍｅｎｔ ｏｆ ａ ｓｉｍｐｌｅ Ｃｌｏｕｄ Ｆｏｕｎｄｒｙ ａｐｐｌｉｃａｔｉｏｎ. Ｂｙ ｄｅｆａｕｌｔ, ｔｈｅ ｔｏｏｌｃｈａｉｎ ｕｓｅｓ ａ ｓａｍｐｌｅ Ｎｏｄｅ.ｊｓ ｗｅａｔｈｅｒ ａｐｐ, ｏｒ ｙｏｕ ｃａｎ ｌｉｎｋ ｔｏ ｙｏｕｒ ｏｗｎ ＧｉｔＨｕｂ ｒｅｐｏｓｉｔｏｒｙ. Ｔｈｅ toolchain runs unit tests using Mocha, checks code coverage by using Istanbul. \n\nThis toolchain uses tools that are part of the Continuous Delivery service. If an instance of that service isn't already in your organization, when you click **Create**, it is automatically added at no cost to you. For more information and terms, see the [Bluemix catalog](/catalog/services/continuous-delivery/).\n\nTo get started, click **Create**.ฏูİı｜]"
-template.gettingStarted: "[G'**Ｙｏｕｒ ｔｏｏｌｃｈａｉｎ ｉｓ ｒｅａｄｙ!**\n**Ｑｕｉｃｋ ｓｔａｒｔ:** Ｃｏｍｍｉｔ ａ ｃｈａｎｇｅ ｔｏ ｔｈｅ Ｇｉｔ ｒｅｐｏ ｔｏ ｔｒｉｇｇｅｒ ａ ｎｅｗ ｂｕｉｌｄ ａｎｄ ｄｅｐｌｏｙｍｅｎｔ. Ｓｅｅ ｒesults in the Deployment Risk dashboard in DevOps Insights. For step-by-step instructions, see the [tutorial](https://www.ibm.com/devops/method/tutorials/tutorial_toolchain_devops_insights) for this toolchain.ฏูİı｜]"
 deploy.title: "[G'ＭｉｃｒｏＳｅｒｖices Deploy Stageฏูİı｜]"
 deploy.description: "[G'Ｆｅｂ Ｄｅｍｏ Ｍｉｃroservices Stage Schemaฏูİı｜]"
 deploy.longDescription: "[G'Ｔｈｅ Ｄｅｌｉｖｅｒｙ Ｐipeline automates continuous deployment.ฏูİı｜]"
