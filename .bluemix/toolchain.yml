@@ -28,6 +28,7 @@ services:
       repo_url: '{{form.githubpublic.parameters.demodra-repo_url}}'
       type: clone
       has_issues: true
+      enable_traceability: true
   demodra-build:
     service_id: pipeline
     parameters:
