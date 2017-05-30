@@ -212,7 +212,7 @@
     </g>
     <text id="headerSVG.think" class="st33 st34" style="white-space: pre; font-size: 12px;" x="-109.813" y="17.45">THINK</text>
     <text id="headerSVG.code" transform="matrix(1 0 0 1 0.2 17.45)" class="st33 st34" style="white-space: pre;">CODE</text>
-    <text id="headerSVG.deliver" transform="matrix(1 0 0 1 89.4 17.45)" class="st33 st34" style="white-space: pre;">DELIVER</text>
+    <text id="headerSVG.deliver" transform="matrix(1 0 0 1 89.4 17.45)" class="st33 st34" textLength="56" lengthAdjust="spacingAndGlyphs" style="white-space: pre;">DELIVER</text>
     <text id="headerSVG.run" transform="matrix(1 0 0 1 178.4 17.45)" class="st33 st34" style="white-space: pre;">RUN</text>
     <text id="headerSVG.learn" transform="matrix(1 0 0 1 267.4 17.45)" class="st33 st34" style="white-space: pre;">LEARN</text>
     <text id="headerSVG.webIde" transform="matrix(1 0 0 1 18.4 246.45)" class="st33 st35" style="white-space: pre;">WEB IDE</text>
@@ -265,7 +265,7 @@
       <line id="line-11" class="st0" x1="54.501" y1="104.9" x2="54.401" y2="104.9"/>
       <line id="line-12" class="st0" x1="53.701" y1="105" x2="53.601" y2="105"/>
       <line id="line-13" class="st0" x1="55.601" y1="104.8" x2="55.501" y2="104.8"/>
-      <text id="headerSVG.issueTracker" class="st33 st35" style="white-space: pre; font-size: 12px;" x="2.4" y="128.45">ISSUE TRACKER</text>
+      <text id="headerSVG.issueTracker" class="st33 st35" textLength="89.7" lengthAdjust="spacingAndGlyphs" style="white-space: pre; font-size: 12px;" x="2.4" y="128.45">ISSUE TRACKER</text>
       <text id="headerSVG.gitHub2" class="st33 st35" style="white-space: pre; font-size: 12px;" x="30.4" y="140.45">GitHub</text>
     </g>
   </g>
