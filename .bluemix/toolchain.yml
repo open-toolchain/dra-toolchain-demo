@@ -13,8 +13,8 @@ template:
     - demodra-repo
   info:
     git url: >-
-      [https://github.com/open-toolchain/dra-toolchain-demo](https://github.com/open-toolchain/dra-toolchain-demo)
-    git branch: '[master](https://github.com/open-toolchain/dra-toolchain-demo/tree/master)'
+      [https://github.com/jparra5/dra-toolchain-demo](https://github.com/jparra5/dra-toolchain-demo)
+    git branch: '[master](https://github.com/jparra5/dra-toolchain-demo/tree/master)'
 toolchain:
   name: 'devops-insights-{{timestamp}}'
   template:
