@@ -11,9 +11,9 @@
         "percentPass":100,
         "regressionCheck":true,
         "criticalTests":[
-          "Get Weather with incomplete zip code",
-          "Get Weather with without zip code",
-          "Get Weather with valid zip code"
+          "Mocha Tests Get Weather with incomplete zip code",
+          "Mocha Tests Get Weather with without zip code",
+          "Mocha Tests Get Weather with valid zip code"
         ]
       },
       {
