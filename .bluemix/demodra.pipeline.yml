@@ -31,7 +31,7 @@ stages:
     coverage_type: istanbul
     coverage_directory: ./tests/coverage/reports/lcov-report
     coverage_file_pattern: ./tests/coverage/reports/coverage.json
-    COMMAND: |
+    COMMAND: |-
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
@@ -82,7 +82,7 @@ stages:
     type: tester
     enable_tests: true
     test_file_pattern: ./mochatest.xml
-    COMMAND: |
+    COMMAND: |-
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
