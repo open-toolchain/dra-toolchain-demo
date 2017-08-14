@@ -81,7 +81,7 @@ stages:
   - name: FVT Test
     type: tester
     enable_tests: true
-    test_file_pattern: ./mochatest.xml
+    test_file_pattern: ./mochafvt.xml
     script: |-
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH

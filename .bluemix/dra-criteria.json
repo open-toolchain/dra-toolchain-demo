@@ -6,7 +6,7 @@
       {
         "name": "Unit Test Rule",
         "description": "Unit Test Rule",
-        "format":"mocha",
+        "format":"xunit",
         "stage":"unittest",
         "percentPass":100,
         "regressionCheck":true,
@@ -27,7 +27,7 @@
       {
         "name": "FVT Test Rule",
         "description": "FVT Test Rule",
-        "format":"mocha",
+        "format":"xunit",
         "stage":"fvt",
         "percentPass":100,
         "regressionCheck":true,
