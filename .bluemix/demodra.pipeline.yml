@@ -35,9 +35,8 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
-      grunt dev-test-cov --no-color -f
-
       npm install -g grunt-idra3
+      grunt dev-test-cov --no-color -f
       idra --publishtestresult --filelocation=./mochatest.xml --type=unittest
       idra --publishtestresult --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
 - name: STAGING
@@ -87,9 +86,8 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
-      grunt fvt-test --no-color -f
-
       npm install -g grunt-idra3
+      grunt fvt-test --no-color -f
       idra --publishtestresult --filelocation=./mochafvt.xml --type=fvt
 - name: GATE
   inputs:
