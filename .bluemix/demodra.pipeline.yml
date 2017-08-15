@@ -36,9 +36,16 @@ stages:
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
       npm install -g grunt-idra3
-      grunt dev-test-cov --no-color -f
+      set +e
+      grunt dev-test-cov --no-color
+      grunt_result=$?
+      set +e
       idra --publishtestresult --filelocation=./mochatest.xml --type=unittest
       idra --publishtestresult --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
+
+      if [ $grunt_result -ne 0 ]; then
+         exit 1
+      fi
 - name: STAGING
   inputs:
   - type: job
