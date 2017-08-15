@@ -26,18 +26,19 @@ stages:
       grunt dev-setup --no-color
   - name: Unit Test and Code Coverage
     type: tester
-    extension_id: ibm.devops.services.pipeline.dra_upload_results
-    FORMAT_SELECT: mocha
-    LIFE_CYCLE_STAGE_SELECT: unittest
-    ADDITIONAL_FORMAT_SELECT: istanbul
-    ADDITIONAL_LIFE_CYCLE_STAGE_SELECT: code
-    ADDITIONAL_LOG_FILE: ./tests/coverage/reports/coverage-summary.json
-    LOG_FILE: ./mochatest.json
-    COMMAND: |
+    enable_tests: true
+    test_file_pattern: ./mochatest.xml
+    coverage_type: istanbul
+    coverage_directory: ./tests/coverage/reports/lcov-report
+    coverage_file_pattern: ./tests/coverage/reports/coverage.json
+    script: |-
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
+      npm install -g grunt-idra3
       grunt dev-test-cov --no-color -f
+      idra --publishtestresult --filelocation=./mochatest.xml --type=unittest
+      idra --publishtestresult --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
 - name: STAGING
   inputs:
   - type: job
@@ -79,15 +80,15 @@ stages:
       #cf logs "${CF_APP_NAME}" --recent
   - name: FVT Test
     type: tester
-    extension_id: ibm.devops.services.pipeline.dra_upload_results
-    FORMAT_SELECT: mocha
-    LIFE_CYCLE_STAGE_SELECT: fvt
-    LOG_FILE: ./mochafvt.json
-    COMMAND: |
+    enable_tests: true
+    test_file_pattern: ./mochafvt.xml
+    script: |-
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
+      npm install -g grunt-idra3
       grunt fvt-test --no-color -f
+      idra --publishtestresult --filelocation=./mochafvt.xml --type=fvt
 - name: GATE
   inputs:
   - type: job
