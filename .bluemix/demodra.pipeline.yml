@@ -107,7 +107,7 @@ stages:
       if [ $grunt_result -ne 0 ]; then
          exit $grunt_result
       fi
-- name: PRODUCTION
+- name: GATE
   inputs:
   - type: job
     stage: BUILD
@@ -115,34 +115,14 @@ stages:
   triggers:
   - type: stage
   properties:
-  - name: CF_APP_NAME
-    value: undefined
-    type: text
-  - name: APP_URL
-    value: undefined
-    type: text
   - name: LOGICAL_APP_NAME
     value: ${LOGICAL_APP_NAME}
-    type: text
-  - name: LOGICAL_ENV_NAME
-    value: PRODUCTION
     type: text
   - name: BUILD_PREFIX
     value: master
     type: text
   jobs:
-  - name: Deploy
-    type: deployer
-    target:
-      region_id: ${PROD_REGION_ID}
-      organization: ${PROD_ORG_NAME}
-      space: ${PROD_SPACE_NAME}
-      application: ${CF_APP_NAME}
-    script: |
-      #!/bin/bash
-      # Push app
-      export CF_APP_NAME="$CF_APP"
-      cf push "${CF_APP_NAME}" -n ${CF_APP_NAME}
-      export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
-      # View logs
-      #cf logs "${CF_APP_NAME}" --recent
+  - name: Gate
+    type: tester
+    extension_id: ibm.devops.services.pipeline.dra_devops_gate
+    CRITERIA: Weather Unit Test, Code Coverage, and FVT Checks
