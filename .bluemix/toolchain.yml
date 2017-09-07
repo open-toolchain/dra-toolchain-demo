@@ -45,6 +45,9 @@ services:
           STAGING_SPACE_NAME: '{{form.pipeline.parameters.staging-space}}'
           STAGING_ORG_NAME: '{{form.pipeline.parameters.staging-organization}}'
           STAGING_REGION_ID: '{{form.pipeline.parameters.staging-region}}'
+          PROD_SPACE_NAME: '{{form.pipeline.parameters.prod-space}}'
+          PROD_ORG_NAME: '{{form.pipeline.parameters.prod-organization}}'
+          PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
         execute: true
   dra:
     service_id: draservicebroker
