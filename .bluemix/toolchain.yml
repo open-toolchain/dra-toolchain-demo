@@ -1,26 +1,12 @@
 version: '2'
-default_locale: en
-locales:
-  $ref: locales.yml
+messages:
+  $i18n: locales.yml
 template:
-  name: Simple Cloud Foundry toolchain with DevOps Insights
-  description: >-
-    With this cloud-native toolchain, you can use DevOps Insights to gate the
-    deployment of a simple Cloud Foundry application. By default, the toolchain
-    uses a sample Node.js weather app, or you can link to your own GitHub
-    repository. The toolchain runs unit tests using Mocha, checks code coverage
-    by using Istanbul.
-
-
-    This toolchain uses tools that are part of the Continuous Delivery service.
-    If an instance of that service isn't already in your organization, when you
-    click **Create**, it is automatically added at no cost to you. For more
-    information and terms, see the [Bluemix
-    catalog](/catalog/services/continuous-delivery/).
-
-
-    To get started, click **Create**.
-  header: '![](dra-toolchain.svg?localize "header image")'
+  name:
+    $ref: "#/messages/template.name"
+  description:
+    $ref: "#/messages/template.description"
+  header: '![](dra-toolchain.svg?localize)'
   icon: icon.svg
   required:
     - demodra-build
@@ -31,6 +17,9 @@ template:
     git branch: '[master](https://github.com/open-toolchain/dra-toolchain-demo/tree/master)'
 toolchain:
   name: 'devops-insights-{{timestamp}}'
+  template:
+    getting_started:
+      $ref: "#/messages/template.gettingStarted"
 services:
   demodra-repo:
     service_id: githubpublic
@@ -39,6 +28,7 @@ services:
       repo_url: '{{form.githubpublic.parameters.demodra-repo_url}}'
       type: clone
       has_issues: true
+      enable_traceability: true
   demodra-build:
     service_id: pipeline
     parameters:
@@ -47,8 +37,7 @@ services:
       name: '{{toolchain.name}}'
       configuration:
         content:
-          $ref: demodra.pipeline.yml
-          $refType: text
+          $text: demodra.pipeline.yml
         env:
           DEMODRA_API_REPO: demodra-repo
           LOGICAL_APP_NAME: Weather Application

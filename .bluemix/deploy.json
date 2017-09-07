@@ -1,11 +1,17 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "MicroServices Deploy Stage",
-    "localized-struct":{
-        "$ref": "deploy-localized-struct.json"
+    "messages": {
+        "$i18n": "locales.yml"
     },
-    "description": "Feb Demo Microservices Stage Schema",
-    "longDescription": "The Delivery Pipeline automates continuous deployment.",
+    "title": {
+        "$ref": "#/messages/deploy.title"
+    },
+    "description": {
+        "$ref": "#/messages/deploy.description"
+    },
+    "longDescription": {
+        "$ref": "#/messages/deploy.longDescription"
+    },
     "type": "object",
     "properties": {
         "staging-region": {
@@ -33,76 +39,104 @@
             "type": "string"
         },
         "demodra-app-name": {
-            "description": "The name of your app",
-            "type": "string"
+            "description": {
+                "$ref": "#/messages/deploy.appDescription"
+            },
+            "type": "string",
+            "pattern": "\\S"
         }
     },
-    "required": ["staging-region", "staging-organization", "staging-space", "prod-region", "prod-organization", "prod-space", "demodra-app-name"],
+    "required": [
+        "staging-region",
+        "staging-organization",
+        "staging-space",
+        "prod-region",
+        "prod-organization",
+        "prod-space",
+        "demodra-app-name"
+    ],
     "form": [
-       {
-          "type": "validator",
-          "url": "/devops/setup/bm-helper/helper.html"
-       },
         {
-          "type": "text",
-          "readonly": false,
-          "title": "App name",
-          "key": "demodra-app-name"
+            "type": "validator",
+            "url": "/devops/setup/bm-helper/helper.html"
+        },
+        {
+            "type": "text",
+            "readonly": false,
+            "title": {
+                "$ref": "#/messages/deploy.appName"
+            },
+            "key": "demodra-app-name"
         },
         {
             "type": "table",
             "columnCount": 4,
-            "widths": ["15%", "28%", "28%", "28%"],
+            "widths": [
+                "15%",
+                "28%",
+                "28%",
+                "28%"
+            ],
             "items": [
                 {
-                  "type": "label",
-                  "title": ""
+                    "type": "label",
+                    "title": ""
                 },
                 {
-                  "type": "label",
-                  "title": "Region"
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/region"
+                    }
                 },
                 {
-                  "type": "label",
-                  "title": "Organization"
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/organization"
+                    }
                 },
                 {
-                  "type": "label",
-                  "title": "Space"
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/space"
+                    }
                 },
                 {
-                  "type": "label",
-                  "title": "Staging stage"
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/devStage"
+                    }
                 },
                 {
-                  "type": "select",
-                  "key": "staging-region"
+                    "type": "select",
+                    "key": "staging-region"
                 },
                 {
-                  "type": "select",
-                  "key": "staging-organization"
+                    "type": "select",
+                    "key": "staging-organization"
                 },
                 {
-                  "type": "select",
-                  "key": "staging-space",
-                  "readonly": false
+                    "type": "select",
+                    "key": "staging-space",
+                    "readonly": false
                 },
                 {
-                  "type": "label",
-                  "title": "Production stage"
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/prodStage"
+                    }
                 },
                 {
-                  "type": "select",
-                  "key": "prod-region"
+                    "type": "select",
+                    "key": "prod-region"
                 },
                 {
-                  "type": "select",
-                  "key": "prod-organization"
+                    "type": "select",
+                    "key": "prod-organization"
                 },
                 {
-                  "type": "select",
-                  "key": "prod-space",
-                  "readonly": false
+                    "type": "select",
+                    "key": "prod-space",
+                    "readonly": false
                 }
             ]
         }
