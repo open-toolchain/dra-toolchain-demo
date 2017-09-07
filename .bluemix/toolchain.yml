@@ -42,12 +42,6 @@ services:
           DEMODRA_API_REPO: demodra-repo
           LOGICAL_APP_NAME: Weather Application
           CF_APP_NAME: '{{form.pipeline.parameters.demodra-app-name}}'
-          STAGING_SPACE_NAME: '{{form.pipeline.parameters.staging-space}}'
-          STAGING_ORG_NAME: '{{form.pipeline.parameters.staging-organization}}'
-          STAGING_REGION_ID: '{{form.pipeline.parameters.staging-region}}'
-          PROD_SPACE_NAME: '{{form.pipeline.parameters.prod-space}}'
-          PROD_ORG_NAME: '{{form.pipeline.parameters.prod-organization}}'
-          PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
         execute: true
   dra:
     service_id: draservicebroker
@@ -57,8 +51,8 @@ services:
 form:
   pipeline:
     parameters:
-      staging-space: staging
-      prod-space: prod
+      staging-space: DLMS
+      prod-space: DLMS
       demodra-app-name: '{{services.demodra-repo.parameters.repo_name}}'
     schema:
       $ref: deploy.json
