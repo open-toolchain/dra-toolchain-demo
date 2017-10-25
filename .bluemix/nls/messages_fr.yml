@@ -1,7 +1,7 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
 template.name: "Chaîne d'outils Cloud Foundry simple avec DevOps Insights"
-template.description: "Cette chaîne d'outils native pour le cloud vous permet d'utiliser DevOps Insights pour construire une application Cloud Foundry simple. Par défaut, la chaîne d'outils utilise une application météo exemple Node.js, mais vous pouvez vous lier à votre propre référentiel GitHub. La chaîne d'outils exécute des tests unitaires à l'aide de Mocha et contrôle la couverture du code en utilisant Istanbul. \n\nCette chaîne d'outils utilise des outils qui font partie du service Continuous Delivery. Si aucune instance de ce service n'existe dans l'organisation sélectionnée, elle est automatiquement ajoutée, lorsque vous cliquez sur **Créer**, avec le plan gratuit [Lite](/catalog/services/continuous-delivery/) sélectionné.\n\nPour commencer, cliquez sur **Créer**."
+template.description: "Cette chaîne d'outils native du cloud vous permet d'utiliser DevOps Insights pour construire une application Cloud Foundry simple. Par défaut, la chaîne d'outils utilise une application météo exemple Node.js, mais vous pouvez vous lier à votre propre référentiel GitHub. La chaîne d'outils exécute des tests unitaires à l'aide de Mocha et contrôle la couverture du code en utilisant Istanbul. \n\nCette chaîne d'outils utilise des outils qui font partie du service Continuous Delivery. Si aucune instance de ce service n'existe dans l'organisation sélectionnée, elle est automatiquement ajoutée, lorsque vous cliquez sur **Créer**, avec le plan gratuit [Lite](/catalog/services/continuous-delivery/) sélectionné.\n\nPour commencer, cliquez sur **Créer**."
 template.gettingStarted: "**Votre chaîne d'outils est prête !**\n**Démarrage rapide :** validez une modification dans le référentiel Git afin de déclencher une nouvelle génération et un nouveau déploiement. Les résultats s'affichent dans le tableau de bord Deployment Risk de DevOps Insights. Pour obtenir des instructions étape par étape, reportez-vous au [tutoriel](https://www.ibm.com/devops/method/tutorials/tutorial_toolchain_devops_insights?task=2) relatif à cette chaîne d'outils."
 deploy.title: "Etape de déploiement de microservices"
 deploy.description: "Schéma de la constitution de microservices - Démo de février"
@@ -11,7 +11,7 @@ deploy.appName: "Nom de l'application"
 region: "Région"
 organization: "Organisation"
 space: "Espace"
-devStage: "Etape de constitution"
+devStage: "Etape de préproduction"
 prodStage: "Etape de production"
 github.title: "Etape de déploiement de microservices"
 github.description: "Schéma GitHub de microservices - Démo de février"
