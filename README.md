@@ -1,4 +1,4 @@
-# Toolchain for Simple Weather Application with DevOps Insights
+# Toolchain for Develop and test a Cloud Foundry app
 
 With this cloud-native toolchain, you can build a simple Node.js weather application. The toolchain builds from a GitHub repository, runs unit tests by using Mocha, checks code coverage by using Istanbul, requests decisions from DevOps Insights, and then deploys to IBM Bluemix.
 
