@@ -14,7 +14,7 @@ template:
   info:
     git url: >-
       [https://github.com/open-toolchain/dra-toolchain-demo](https://github.com/open-toolchain/dra-toolchain-demo)
-    git branch: '[master](https://github.com/open-toolchain/dra-toolchain-demo/tree/master)'
+    git branch: '[public-eu-de](https://github.com/open-toolchain/dra-toolchain-demo/tree/public-eu-de)'
 toolchain:
   name: 'devops-insights-{{timestamp}}'
   template:
@@ -49,9 +49,6 @@ services:
           PROD_ORG_NAME: '{{form.pipeline.parameters.prod-organization}}'
           PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
         execute: true
-  dra:
-    service_id: draservicebroker
-    $ref: dra.yml
   webide:
     service_id: orion
 form:

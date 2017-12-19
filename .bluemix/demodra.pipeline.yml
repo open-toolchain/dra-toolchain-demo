@@ -7,13 +7,6 @@ stages:
     service: ${DEMODRA_API_REPO}
   triggers:
   - type: commit
-  properties:
-  - name: LOGICAL_APP_NAME
-    value: ${LOGICAL_APP_NAME}
-    type: text
-  - name: BUILD_PREFIX
-    value: master
-    type: text
   jobs:
   - name: Build
     type: builder
@@ -35,15 +28,11 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
-      npm install -g grunt-idra3
 
       set +e
       grunt dev-test-cov --no-color
       grunt_result=$?
       set -e
-
-      idra --publishtestresult --filelocation=./mochatest.xml --type=unittest
-      idra --publishtestresult --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
 
       if [ $grunt_result -ne 0 ]; then
          exit $grunt_result
@@ -62,15 +51,6 @@ stages:
   - name: APP_URL
     value: undefined
     type: text
-  - name: LOGICAL_APP_NAME
-    value: ${LOGICAL_APP_NAME}
-    type: text
-  - name: LOGICAL_ENV_NAME
-    value: STAGING
-    type: text
-  - name: BUILD_PREFIX
-    value: master
-    type: text
   jobs:
   - name: Deploy
     type: deployer
@@ -84,7 +64,7 @@ stages:
       # Push app
       export CF_APP_NAME="staging-$CF_APP"
       cf push "${CF_APP_NAME}" -n ${CF_APP_NAME}
-      export APP_URL=http://$(cf app $CF_APP_NAME | grep urls: | awk '{print $2}')
+      export APP_URL=http://$(cf app $CF_APP_NAME | grep -e urls: -e routes: | awk '{print $2}')
       # View logs
       #cf logs "${CF_APP_NAME}" --recent
   - name: FVT Test
@@ -95,14 +75,11 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
-      npm install -g grunt-idra3
 
       set +e
       grunt fvt-test --no-color
       grunt_result=$?
       set -e
-
-      idra --publishtestresult --filelocation=./mochafvt.xml --type=fvt
 
       if [ $grunt_result -ne 0 ]; then
          exit $grunt_result
@@ -114,18 +91,6 @@ stages:
     job: Build
   triggers:
   - type: stage
-  properties:
-  - name: LOGICAL_APP_NAME
-    value: ${LOGICAL_APP_NAME}
-    type: text
-  - name: BUILD_PREFIX
-    value: master
-    type: text
-  jobs:
-  - name: Gate
-    type: tester
-    extension_id: ibm.devops.services.pipeline.dra_devops_gate
-    CRITERIA: Weather Unit Test, Code Coverage, and FVT Checks
 - name: PRODUCTION
   inputs:
   - type: job
@@ -139,15 +104,6 @@ stages:
     type: text
   - name: APP_URL
     value: undefined
-    type: text
-  - name: LOGICAL_APP_NAME
-    value: ${LOGICAL_APP_NAME}
-    type: text
-  - name: LOGICAL_ENV_NAME
-    value: PRODUCTION
-    type: text
-  - name: BUILD_PREFIX
-    value: master
     type: text
   jobs:
   - name: Deploy
