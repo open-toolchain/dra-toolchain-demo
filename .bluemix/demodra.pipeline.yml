@@ -84,13 +84,6 @@ stages:
       if [ $grunt_result -ne 0 ]; then
          exit $grunt_result
       fi
-- name: GATE
-  inputs:
-  - type: job
-    stage: BUILD
-    job: Build
-  triggers:
-  - type: stage
 - name: PRODUCTION
   inputs:
   - type: job
