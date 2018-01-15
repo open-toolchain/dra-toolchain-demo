@@ -16,7 +16,7 @@ template:
       [https://github.com/open-toolchain/dra-toolchain-demo](https://github.com/open-toolchain/dra-toolchain-demo)
     git branch: '[public-eu-de](https://github.com/open-toolchain/dra-toolchain-demo/tree/public-eu-de)'
 toolchain:
-  name: 'simple-toolchain-{{timestamp}}'
+  name: 'simple-{{timestamp}}'
   template:
     getting_started:
       $ref: "#/messages/template.gettingStarted"
