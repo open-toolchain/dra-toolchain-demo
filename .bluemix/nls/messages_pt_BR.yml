@@ -1,7 +1,7 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
-template.name: "Cadeia de ferramentas simples do Cloud Foundry com o DevOps Insights"
-template.description: "Com essa cadeia de ferramentas nativa da nuvem, é possível usar o DevOps Insights como porta para a implementação de um aplicativo Cloud Foundry simples. Por padrão, a cadeia de ferramentas usa um app de clima Node.js de amostra ou é possível vincular-se a seu próprio repositório GitHub. A cadeia de ferramentas executa testes de unidade usando Mocha, verifica a cobertura de código usando Istambul. \n\nEsta cadeia de ferramentas usa ferramentas que são parte do serviço Continuous Delivery. Se uma instância desse serviço ainda não estiver na organização selecionada, ela será adicionada automaticamente com o plano [Lite](/catalog/services/continuous-delivery/) grátis selecionado ao clicar em **Criar**.\n\nPara iniciar, clique em **Criar**."
+template.name: "Desenvolver e testar um app do Cloud Foundry"
+template.description: "Com essa cadeia de ferramentas nativa da nuvem, é possível usar o DevOps Insights como porta para a implementação de um aplicativo Cloud Foundry simples. Por padrão, a cadeia de ferramentas usa um app de clima Node.js de amostra ou é possível vincular-se a seu próprio repositório GitHub. A cadeia de ferramentas executa testes de unidade usando Mocha, verifica a cobertura de código usando Istambul. \n\nEsta cadeia de ferramentas usa ferramentas que são parte do serviço Continuous Delivery. Se uma instância desse serviço ainda não estiver na organização selecionada, ela será adicionada automaticamente com o plano [Lite](/catalog/services/continuous-delivery/) grátis selecionado ao clicar em **Criar**.\n\nPara iniciar, clique em **Criar**.\n\nPara obter instruções passo a passo, siga o [tutorial](https://www.ibm.com/devops/method/tutorials/tutorial_toolchain_devops_insights)."
 template.gettingStarted: "**Sua cadeia de ferramentas está pronta!**\n**Iniciação rápida:** Confirme uma mudança no repositório Git para acionar uma nova compilação e implementação. Veja os resultados no painel Risco de implementação do DevOps Insights. Para obter instruções passo a passo, veja o [tutorial](https://www.ibm.com/devops/method/tutorials/tutorial_toolchain_devops_insights?task=2) para essa cadeia de ferramentas."
 deploy.title: "Estágio de Implementação de MicroServices"
 deploy.description: "Esquema de Estágio de Microsserviços Feb Demo"
@@ -28,6 +28,7 @@ headerSVG.gitHub1: "GitHub"
 headerSVG.gitHub2: "GitHub"
 headerSVG.pipeline: "PIPELINE"
 headerSVG.bluemix: "BLUEMIX"
+headerSVG.ibmCloud: "IBM Cloud"
 headerSVG.webIde: "WEB IDE"
 headerSVG.devops: "DEVOPS"
 headerSVG.insights: "INSIGHTS"
