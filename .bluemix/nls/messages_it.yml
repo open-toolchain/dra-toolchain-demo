@@ -19,7 +19,7 @@ github.longDescription: "Con GitHub, è possibile memorizzare il codice sorgente
 github.sourceRepository: "Repository di origine"
 github.targetRepository: "Repository di destinazione"
 headerSVG.think: "PENSA"
-headerSVG.code: "CODE"
+headerSVG.code: "CODIFICA"
 headerSVG.deliver: "DISTRIBUISCI"
 headerSVG.run: "ESEGUI"
 headerSVG.learn: "IMPARA"
