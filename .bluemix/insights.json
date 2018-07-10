@@ -14,53 +14,15 @@
     },
     "type": "object",
     "properties": {
-        "staging-region": {
-            "description": "The bluemix region",
-            "type": "string"
-        },
-        "staging-organization": {
-            "description": "The bluemix org",
-            "type": "string"
-        },
-        "staging-space": {
-            "description": "The bluemix space",
-            "type": "string"
-        },
-        "prod-region": {
-            "description": "The bluemix region",
-            "type": "string"
-        },
-        "prod-organization": {
-            "description": "The bluemix org",
-            "type": "string"
-        },
-        "prod-space": {
-            "description": "The bluemix space",
-            "type": "string"
-        },
-        "api-key": {
+        "insights-api-key": {
             "description": {
                 "$ref": "#/messages/deploy.apiKeyDescription"
             },
             "type": "string"
-        },
-        "demodra-app-name": {
-            "description": {
-                "$ref": "#/messages/deploy.appDescription"
-            },
-            "type": "string",
-            "pattern": "\\S"
         }
     },
     "required": [
-        "staging-region",
-        "staging-organization",
-        "staging-space",
-        "prod-region",
-        "prod-organization",
-        "prod-space",
-        "demodra-app-name",
-        "api-key"
+        "insights-api-key"
     ],
     "form": [
         {
@@ -81,7 +43,7 @@
 	        "title": {
                 "$ref": "#/messages/deploy.apiKeyTitle"
             },
-	        "key": "api-key"
+	        "key": "insights-api-key"
         }
     ]
 }
