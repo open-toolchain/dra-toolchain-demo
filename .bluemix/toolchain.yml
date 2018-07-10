@@ -56,7 +56,7 @@ services:
   webide:
     service_id: orion
 form:
-  insights:
+  draservicebroker:
     parameters:
       staging-space: staging
       prod-space: prod
