@@ -4,13 +4,13 @@
         "$i18n": "locales.yml"
     },
     "title": {
-        "$ref": "#/messages/deploy.title"
+        "$ref": "#/messages/insights.title"
     },
     "description": {
-        "$ref": "#/messages/deploy.description"
+        "$ref": "#/messages/insights.description"
     },
     "longDescription": {
-        "$ref": "#/messages/deploy.longDescription"
+        "$ref": "#/messages/insights.longDescription"
     },
     "type": "object",
     "properties": {
@@ -28,14 +28,6 @@
         {
             "type": "validator",
             "url": "/devops/setup/bm-helper/helper.html"
-        },
-        {
-            "type": "text",
-            "readonly": false,
-            "title": {
-                "$ref": "#/messages/deploy.appName"
-            },
-            "key": "demodra-app-name"
         },
         {
 	        "type": "password",
