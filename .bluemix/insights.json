@@ -1,0 +1,159 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "messages": {
+        "$i18n": "locales.yml"
+    },
+    "title": {
+        "$ref": "#/messages/deploy.title"
+    },
+    "description": {
+        "$ref": "#/messages/deploy.description"
+    },
+    "longDescription": {
+        "$ref": "#/messages/deploy.longDescription"
+    },
+    "type": "object",
+    "properties": {
+        "staging-region": {
+            "description": "The bluemix region",
+            "type": "string"
+        },
+        "staging-organization": {
+            "description": "The bluemix org",
+            "type": "string"
+        },
+        "staging-space": {
+            "description": "The bluemix space",
+            "type": "string"
+        },
+        "prod-region": {
+            "description": "The bluemix region",
+            "type": "string"
+        },
+        "prod-organization": {
+            "description": "The bluemix org",
+            "type": "string"
+        },
+        "prod-space": {
+            "description": "The bluemix space",
+            "type": "string"
+        },
+        "api-key": {
+            "description": {
+                "$ref": "#/messages/deploy.apiKeyDescription"
+            },
+            "type": "string"
+        },
+        "demodra-app-name": {
+            "description": {
+                "$ref": "#/messages/deploy.appDescription"
+            },
+            "type": "string",
+            "pattern": "\\S"
+        }
+    },
+    "required": [
+        "staging-region",
+        "staging-organization",
+        "staging-space",
+        "prod-region",
+        "prod-organization",
+        "prod-space",
+        "demodra-app-name",
+        "api-key"
+    ],
+    "form": [
+        {
+            "type": "validator",
+            "url": "/devops/setup/bm-helper/helper.html"
+        },
+        {
+            "type": "text",
+            "readonly": false,
+            "title": {
+                "$ref": "#/messages/deploy.appName"
+            },
+            "key": "demodra-app-name"
+        },
+        {
+	        "type": "password",
+	        "readonly": false,
+	        "title": {
+                "$ref": "#/messages/deploy.apiKeyTitle"
+            },
+	        "key": "api-key"
+        },
+        {
+            "type": "table",
+            "columnCount": 4,
+            "widths": [
+                "15%",
+                "28%",
+                "28%",
+                "28%"
+            ],
+            "items": [
+                {
+                    "type": "label",
+                    "title": ""
+                },
+                {
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/region"
+                    }
+                },
+                {
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/organization"
+                    }
+                },
+                {
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/space"
+                    }
+                },
+                {
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/devStage"
+                    }
+                },
+                {
+                    "type": "select",
+                    "key": "staging-region"
+                },
+                {
+                    "type": "select",
+                    "key": "staging-organization"
+                },
+                {
+                    "type": "select",
+                    "key": "staging-space",
+                    "readonly": false
+                },
+                {
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/prodStage"
+                    }
+                },
+                {
+                    "type": "select",
+                    "key": "prod-region"
+                },
+                {
+                    "type": "select",
+                    "key": "prod-organization"
+                },
+                {
+                    "type": "select",
+                    "key": "prod-space",
+                    "readonly": false
+                }
+            ]
+        }
+    ]
+}

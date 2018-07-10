@@ -56,6 +56,13 @@ services:
   webide:
     service_id: orion
 form:
+  insights:
+    parameters:
+      staging-space: staging
+      prod-space: prod
+      demodra-app-name: '{{services.demodra-repo.parameters.repo_name}}'
+    schema:
+      $ref: insights.json
   pipeline:
     parameters:
       staging-space: staging
