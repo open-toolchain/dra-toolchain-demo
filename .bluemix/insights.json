@@ -14,7 +14,7 @@
     },
     "type": "object",
     "properties": {
-        "insights-api-key": {
+        "iam-api-key": {
             "description": {
                 "$ref": "#/messages/deploy.apiKeyDescription"
             },
@@ -22,7 +22,7 @@
         }
     },
     "required": [
-        "insights-api-key"
+        "iam-api-key"
     ],
     "form": [
         {
@@ -35,7 +35,7 @@
 	        "title": {
                 "$ref": "#/messages/deploy.apiKeyTitle"
             },
-	        "key": "insights-api-key"
+	        "key": "iam-api-key"
         }
     ]
 }
