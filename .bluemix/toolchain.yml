@@ -57,10 +57,6 @@ services:
     service_id: orion
 form:
   draservicebroker:
-    parameters:
-      staging-space: staging
-      prod-space: prod
-      demodra-app-name: '{{services.demodra-repo.parameters.repo_name}}'
     schema:
       $ref: insights.json
   pipeline:
