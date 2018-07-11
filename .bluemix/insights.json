@@ -3,15 +3,6 @@
     "messages": {
         "$i18n": "locales.yml"
     },
-    "title": {
-        "$ref": "#/messages/insights.title"
-    },
-    "description": {
-        "$ref": "#/messages/insights.description"
-    },
-    "longDescription": {
-        "$ref": "#/messages/insights.longDescription"
-    },
     "type": "object",
     "properties": {
         "iam-api-key": {
