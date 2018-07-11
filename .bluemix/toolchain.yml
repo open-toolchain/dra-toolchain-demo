@@ -49,7 +49,7 @@ services:
           PROD_ORG_NAME: '{{form.pipeline.parameters.prod-organization}}'
           PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
           API_KEY: '{{form.pipeline.parameters.api-key}}'
-          INSIGHTS_API_KEY: '{{form.draservicebroker.parameters.api-key}}'
+          INSIGHTS_API_KEY: '{{form.draservicebroker.parameters.iam-api-key}}'
         execute: true
   dra:
     service_id: draservicebroker
