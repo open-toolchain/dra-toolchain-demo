@@ -14,9 +14,6 @@ stages:
   - name: BUILD_PREFIX
     value: master
     type: text
-  - name: IBM_CLOUD_API_KEY
-    value: ${INSIGHTS_API_KEY}
-    type: text
   jobs:
   - name: Build
     type: builder
@@ -74,9 +71,6 @@ stages:
   - name: BUILD_PREFIX
     value: master
     type: text
-  - name: IBM_CLOUD_API_KEY
-    value: ${INSIGHTS_API_KEY}
-    type: text
   jobs:
   - name: Deploy
     type: deployer
@@ -127,9 +121,6 @@ stages:
     type: text
   - name: BUILD_PREFIX
     value: master
-    type: text
-  - name: IBM_CLOUD_API_KEY
-    value: ${INSIGHTS_API_KEY}
     type: text
   jobs:
   - name: Gate
