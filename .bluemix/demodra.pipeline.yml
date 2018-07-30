@@ -29,8 +29,6 @@ stages:
       grunt dev-setup --no-color
   - name: Unit Test and Code Coverage
     type: tester
-    enable_tests: true
-    test_file_pattern: ./mochatest.xml
     coverage_type: istanbul
     coverage_directory: ./tests/coverage/reports/lcov-report
     coverage_file_pattern: ./tests/coverage/reports/coverage.json
@@ -45,7 +43,7 @@ stages:
       grunt_result=$?
       set -e
 
-      idra --publishtestresult --filelocation=./mochatest.xml --type=unittest
+      idra --publishtestresult --filelocation=./mochatest.json --type=unittest
       idra --publishtestresult --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
 
       if [ $grunt_result -ne 0 ]; then
@@ -96,8 +94,6 @@ stages:
       #cf logs "${CF_APP_NAME}" --recent
   - name: FVT Test
     type: tester
-    enable_tests: true
-    test_file_pattern: ./mochafvt.xml
     script: |-
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
@@ -109,7 +105,7 @@ stages:
       grunt_result=$?
       set -e
 
-      idra --publishtestresult --filelocation=./mochafvt.xml --type=fvt
+      idra --publishtestresult --filelocation=./mochafvt.json --type=fvt
 
       if [ $grunt_result -ne 0 ]; then
          exit $grunt_result
