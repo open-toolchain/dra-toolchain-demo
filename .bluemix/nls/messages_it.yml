@@ -9,7 +9,7 @@ deploy.longDescription: "Delivery Pipeline automatizza la distribuzione continua
 deploy.appDescription: "Il nome dell'app"
 deploy.appName: "Nome app"
 deploy.apiKeyTitle: "Chiave API IBM Cloud"
-deploy.apiKeyDescription: "È necessaria una chiave API per accedere al runtime dell'IBM Cloud. Se non se ne dispone, è possibile fare clic sul pulsante Crea. È possibile anche ottenere una chiave API con 'bx iam api-key-create' o tramite la console all'indirizzo https://console.bluemix.net/iam/#/apikeys"
+deploy.apiKeyDescription: "È necessaria una chiave API per accedere al runtime IBM Cloud. Se non se ne dispone, è possibile fare clic sul pulsante Crea. È possibile anche ottenere una chiave API con 'bx iam api-key-create' o tramite la console all'indirizzo https://console.bluemix.net/iam/#/apikeys"
 region: "Regione"
 organization: "Organizzazione"
 space: "Spazio"
