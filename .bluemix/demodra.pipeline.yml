@@ -95,6 +95,8 @@ stages:
       api_key: ${API_KEY}
     script: |
       #!/bin/bash
+      export PATH=/opt/IBM/node-v4.2/bin:$PATH
+
       # Push app
       export CF_APP_NAME="staging-$CF_APP"
       cf push "${CF_APP_NAME}"
@@ -108,6 +110,7 @@ stages:
          deploy_status="fail"
       fi
 
+      npm install -g grunt-idra3
       idra --publishdeployrecord  --env=$LOGICAL_ENV_NAME --status=$deploy_status --appurl=$APP_URL
   - name: FVT Test
     type: tester
@@ -183,6 +186,8 @@ stages:
       api_key: ${API_KEY}
     script: |
       #!/bin/bash
+      export PATH=/opt/IBM/node-v4.2/bin:$PATH
+
       # Push app
       export CF_APP_NAME="$CF_APP"
       cf push "${CF_APP_NAME}"
@@ -196,4 +201,5 @@ stages:
          deploy_status="fail"
       fi
 
+      npm install -g grunt-idra3
       idra --publishdeployrecord  --env=$LOGICAL_ENV_NAME --status=$deploy_status --appurl=$APP_URL
