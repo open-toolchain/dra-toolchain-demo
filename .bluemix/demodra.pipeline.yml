@@ -30,12 +30,12 @@ stages:
 
       grunt dev-setup --no-color
       grunt_result=$?
-      build_pass=true
+      build_status="pass"
       if [ $grunt_result -ne 0 ]; then
-         build_pass=false
+         build_status="fail"
       fi
 
-      idra --publishbuildrecord --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=$build_pass
+      idra --publishbuildrecord --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=$build_status
   - name: Unit Test and Code Coverage
     type: tester
     coverage_type: istanbul
@@ -103,12 +103,12 @@ stages:
       # View logs
       #cf logs "${CF_APP_NAME}" --recent
 
-      deploy_pass=true
+      deploy_status="pass"
       if [ $push_result -ne 0 ]; then
-         deploy_pass=false
+         deploy_status="fail"
       fi
 
-      idra --publishdeployrecord  --env=$LOGICAL_ENV_NAME --status=$deploy_pass --appurl=$APP_URL
+      idra --publishdeployrecord  --env=$LOGICAL_ENV_NAME --status=$deploy_status --appurl=$APP_URL
   - name: FVT Test
     type: tester
     script: |-
@@ -191,9 +191,9 @@ stages:
       # View logs
       #cf logs "${CF_APP_NAME}" --recent
 
-      deploy_pass=true
+      deploy_status="pass"
       if [ $push_result -ne 0 ]; then
-         deploy_pass=false
+         deploy_status="fail"
       fi
 
-      idra --publishdeployrecord  --env=$LOGICAL_ENV_NAME --status=$deploy_pass --appurl=$APP_URL
+      idra --publishdeployrecord  --env=$LOGICAL_ENV_NAME --status=$deploy_status --appurl=$APP_URL
