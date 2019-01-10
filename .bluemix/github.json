@@ -27,6 +27,10 @@
     ],
     "form": [
         {
+            "type": "validator",
+            "url": "/devops/setup/bm-helper/custom_github_helper.html"
+        },
+        {
             "type": "table",
             "columnCount": 3,
             "widths": [

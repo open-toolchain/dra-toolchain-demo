@@ -6,14 +6,14 @@
       {
         "name": "Unit Test Rule",
         "description": "Unit Test Rule",
-        "format":"xunit",
+        "format":"mocha",
         "stage":"unittest",
         "percentPass":100,
         "regressionCheck":true,
         "criticalTests":[
-          "Mocha Tests Get Weather with incomplete zip code",
-          "Mocha Tests Get Weather with without zip code",
-          "Mocha Tests Get Weather with valid zip code"
+          "Get Weather with incomplete zip code",
+          "Get Weather with without zip code",
+          "Get Weather with valid zip code"
         ]
       },
       {
@@ -27,7 +27,7 @@
       {
         "name": "FVT Test Rule",
         "description": "FVT Test Rule",
-        "format":"xunit",
+        "format":"mocha",
         "stage":"fvt",
         "percentPass":100,
         "regressionCheck":true,
