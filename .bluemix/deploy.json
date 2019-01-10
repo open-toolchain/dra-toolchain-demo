@@ -38,6 +38,12 @@
             "description": "The bluemix space",
             "type": "string"
         },
+        "api-key": {
+            "description": {
+                "$ref": "#/messages/deploy.apiKeyDescription"
+            },
+            "type": "string"
+        },
         "demodra-app-name": {
             "description": {
                 "$ref": "#/messages/deploy.appDescription"
@@ -53,7 +59,8 @@
         "prod-region",
         "prod-organization",
         "prod-space",
-        "demodra-app-name"
+        "demodra-app-name",
+        "api-key"
     ],
     "form": [
         {
@@ -67,6 +74,14 @@
                 "$ref": "#/messages/deploy.appName"
             },
             "key": "demodra-app-name"
+        },
+        {
+	        "type": "password",
+	        "readonly": false,
+	        "title": {
+                "$ref": "#/messages/deploy.apiKeyTitle"
+            },
+	        "key": "api-key"
         },
         {
             "type": "table",

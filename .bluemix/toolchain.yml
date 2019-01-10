@@ -11,6 +11,7 @@ template:
   required:
     - demodra-build
     - demodra-repo
+    - dra
   info:
     git url: >-
       [https://github.com/open-toolchain/dra-toolchain-demo](https://github.com/open-toolchain/dra-toolchain-demo)
@@ -45,6 +46,11 @@ services:
           STAGING_SPACE_NAME: '{{form.pipeline.parameters.staging-space}}'
           STAGING_ORG_NAME: '{{form.pipeline.parameters.staging-organization}}'
           STAGING_REGION_ID: '{{form.pipeline.parameters.staging-region}}'
+          PROD_SPACE_NAME: '{{form.pipeline.parameters.prod-space}}'
+          PROD_ORG_NAME: '{{form.pipeline.parameters.prod-organization}}'
+          PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
+          API_KEY: '{{form.pipeline.parameters.api-key}}'
+          INSIGHTS_API_KEY: '{{form.draservicebroker.parameters.iam-api-key}}'
         execute: true
   dra:
     service_id: draservicebroker
@@ -52,6 +58,9 @@ services:
   webide:
     service_id: orion
 form:
+  draservicebroker:
+    schema:
+      $ref: insights.json
   pipeline:
     parameters:
       staging-space: DLMS
