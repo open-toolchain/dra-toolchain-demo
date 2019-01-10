@@ -26,7 +26,16 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
+      npm install -g grunt-idra3
+
       grunt dev-setup --no-color
+      grunt_result=$?
+      build_pass=true
+      if [ $grunt_result -ne 0 ]; then
+         build_pass=false
+      fi
+
+      idra --publishbuildrecord --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=$build_pass
   - name: Unit Test and Code Coverage
     type: tester
     coverage_type: istanbul
@@ -89,9 +98,17 @@ stages:
       # Push app
       export CF_APP_NAME="staging-$CF_APP"
       cf push "${CF_APP_NAME}"
+      push_result=$?
       export APP_URL=http://$(cf app $CF_APP_NAME | grep -e urls: -e routes: | awk '{print $2}')
       # View logs
       #cf logs "${CF_APP_NAME}" --recent
+
+      deploy_pass=true
+      if [ $push_result -ne 0 ]; then
+         deploy_pass=false
+      fi
+
+      idra --publishdeployrecord  --env=$LOGICAL_ENV_NAME --status=$deploy_pass --appurl=$APP_URL
   - name: FVT Test
     type: tester
     script: |-
@@ -169,6 +186,14 @@ stages:
       # Push app
       export CF_APP_NAME="$CF_APP"
       cf push "${CF_APP_NAME}"
+      push_result=$?
       export APP_URL=http://$(cf app $CF_APP_NAME | grep -e urls: -e routes: | awk '{print $2}')
       # View logs
       #cf logs "${CF_APP_NAME}" --recent
+
+      deploy_pass=true
+      if [ $push_result -ne 0 ]; then
+         deploy_pass=false
+      fi
+
+      idra --publishdeployrecord  --env=$LOGICAL_ENV_NAME --status=$deploy_pass --appurl=$APP_URL
