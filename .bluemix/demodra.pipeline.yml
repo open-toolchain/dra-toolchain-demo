@@ -16,7 +16,7 @@ stages:
     type: text
   - name: IBM_CLOUD_API_KEY
     value: ${INSIGHTS_API_KEY}
-    type: text
+    type: secure
   jobs:
   - name: Build
     type: builder
@@ -26,16 +26,7 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v4.2/bin:$PATH
       npm install
-      npm install -g grunt-idra3
-
-      grunt dev-setup --no-color
-      grunt_result=$?
-      build_status="pass"
-      if [ $grunt_result -ne 0 ]; then
-         build_status="fail"
-      fi
-
-      idra --publishbuildrecord --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=$build_status
+      grunt dev-setup --no-color  
   - name: Unit Test and Code Coverage
     type: tester
     coverage_type: istanbul
@@ -51,6 +42,12 @@ stages:
       grunt dev-test-cov --no-color
       grunt_result=$?
       set -e
+
+      build_status="pass"
+      if [ $grunt_result -ne 0 ]; then
+         build_status="fail"
+      fi
+      idra --publishbuildrecord --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=$build_status
 
       idra --publishtestresult --filelocation=./mochatest.json --type=unittest
       idra --publishtestresult --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
@@ -83,7 +80,7 @@ stages:
     type: text
   - name: IBM_CLOUD_API_KEY
     value: ${INSIGHTS_API_KEY}
-    type: text
+    type: secure
   jobs:
   - name: Deploy
     type: deployer
@@ -146,7 +143,7 @@ stages:
     type: text
   - name: IBM_CLOUD_API_KEY
     value: ${INSIGHTS_API_KEY}
-    type: text
+    type: secure
   jobs:
   - name: Gate
     type: tester
@@ -177,7 +174,7 @@ stages:
     type: text
   - name: IBM_CLOUD_API_KEY
     value: ${INSIGHTS_API_KEY}
-    type: text
+    type: secure
   jobs:
   - name: Deploy
     type: deployer
