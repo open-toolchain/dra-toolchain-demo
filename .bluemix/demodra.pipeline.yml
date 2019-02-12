@@ -24,17 +24,23 @@ stages:
     build_type: shell
     script: |-
       #!/bin/bash
-      export PATH=/opt/IBM/node-v4.2/bin:$PATH
+      export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
       npm install
-      grunt dev-setup --no-color  
+      npm install -g grunt-idra3
+
+      grunt dev-setup --no-color
+      grunt_result=$?
+
+      build_status="pass"
+      if [ $grunt_result -ne 0 ]; then
+         build_status="fail"
+      fi
+      idra --publishbuildrecord --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=$build_status 
   - name: Unit Test and Code Coverage
     type: tester
-    coverage_type: istanbul
-    coverage_directory: ./tests/coverage/reports/lcov-report
-    coverage_file_pattern: ./tests/coverage/reports/coverage.json
     script: |-
       #!/bin/bash
-      export PATH=/opt/IBM/node-v4.2/bin:$PATH
+      export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
       npm install
       npm install -g grunt-idra3
 
@@ -42,12 +48,6 @@ stages:
       grunt dev-test-cov --no-color
       grunt_result=$?
       set -e
-
-      build_status="pass"
-      if [ $grunt_result -ne 0 ]; then
-         build_status="fail"
-      fi
-      idra --publishbuildrecord --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=$build_status
 
       idra --publishtestresult --filelocation=./mochatest.json --type=unittest
       idra --publishtestresult --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
@@ -92,7 +92,7 @@ stages:
       api_key: ${API_KEY}
     script: |
       #!/bin/bash
-      export PATH=/opt/IBM/node-v4.2/bin:$PATH
+      export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
 
       # Push app
       export CF_APP_NAME="staging-$CF_APP"
@@ -113,7 +113,7 @@ stages:
     type: tester
     script: |-
       #!/bin/bash
-      export PATH=/opt/IBM/node-v4.2/bin:$PATH
+      export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
       npm install
       npm install -g grunt-idra3
 
@@ -186,7 +186,7 @@ stages:
       api_key: ${API_KEY}
     script: |
       #!/bin/bash
-      export PATH=/opt/IBM/node-v4.2/bin:$PATH
+      export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
 
       # Push app
       export CF_APP_NAME="$CF_APP"
