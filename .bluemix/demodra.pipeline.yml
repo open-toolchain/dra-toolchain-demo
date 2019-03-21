@@ -41,7 +41,7 @@ stages:
           ibmcloud api test.cloud.ibm.com
       fi
 
-      ibmcloud plugin install doi
+      ibmcloud plugin install doi -f -v 0.0.6
       ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
       ibmcloud doi publishbuildrecord --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=$build_status
   - name: Unit Test and Code Coverage
@@ -62,7 +62,7 @@ stages:
           ibmcloud api test.cloud.ibm.com
       fi
 
-      ibmcloud plugin install doi
+      ibmcloud plugin install doi -f -v 0.0.6
       ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
       ibmcloud doi publishtestrecord --filelocation=./mochatest.json --type=unittest
       ibmcloud doi publishtestrecord --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
