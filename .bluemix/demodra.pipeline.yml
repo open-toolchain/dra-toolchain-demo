@@ -7,16 +7,6 @@ stages:
     service: ${DEMODRA_API_REPO}
   triggers:
   - type: commit
-  properties:
-  - name: LOGICAL_APP_NAME
-    value: ${LOGICAL_APP_NAME}
-    type: text
-  - name: BUILD_PREFIX
-    value: master
-    type: text
-  - name: IBM_CLOUD_API_KEY
-    value: ${INSIGHTS_API_KEY}
-    type: secure
   jobs:
   - name: Build
     type: builder
@@ -41,9 +31,11 @@ stages:
           ibmcloud api test.cloud.ibm.com
       fi
 
-      ibmcloud plugin install doi
-      ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
-      ibmcloud doi publishbuildrecord --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=$build_status
+      echo "MY_BUILD_NUMBER=${GIT_BRANCH}:${BUILD_NUMBER}" >> $ARCHIVE_DIR/build.properties
+
+      echo 'n' | ibmcloud plugin install doi
+      ibmcloud login --apikey $API_KEY --no-region
+      ibmcloud doi publishbuildrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=pass
   - name: Unit Test and Code Coverage
     type: tester
     script: |-
@@ -62,10 +54,10 @@ stages:
           ibmcloud api test.cloud.ibm.com
       fi
 
-      ibmcloud plugin install doi
+      echo 'n' | ibmcloud plugin install doi
       ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
-      ibmcloud doi publishtestrecord --filelocation=./mochatest.json --type=unittest
-      ibmcloud doi publishtestrecord --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
+      ibmcloud doi publishtestrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --filelocation=./mochatest.json --type=unittest
+      ibmcloud doi publishtestrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
 
       if [ $grunt_result -ne 0 ]; then
          exit $grunt_result
@@ -84,18 +76,6 @@ stages:
   - name: APP_URL
     value: undefined
     type: text
-  - name: LOGICAL_APP_NAME
-    value: ${LOGICAL_APP_NAME}
-    type: text
-  - name: LOGICAL_ENV_NAME
-    value: STAGING
-    type: text
-  - name: BUILD_PREFIX
-    value: master
-    type: text
-  - name: IBM_CLOUD_API_KEY
-    value: ${INSIGHTS_API_KEY}
-    type: secure
   jobs:
   - name: Deploy
     type: deployer
@@ -128,9 +108,9 @@ stages:
           ibmcloud api test.cloud.ibm.com
       fi
 
-      ibmcloud plugin install doi
+      echo 'n' | ibmcloud plugin install doi
       ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
-      ibmcloud doi publishdeployrecord --env=$LOGICAL_ENV_NAME --status=$deploy_status --joburl=$APP_URL
+      ibmcloud doi publishdeployrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --env=STAGING --status=$deploy_status --joburl=$APP_URL
   - name: FVT Test
     type: tester
     script: |-
@@ -149,9 +129,9 @@ stages:
           ibmcloud api test.cloud.ibm.com
       fi
 
-      ibmcloud plugin install doi
+      echo 'n' | ibmcloud plugin install doi
       ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
-      ibmcloud doi publishtestrecord --filelocation=./mochafvt.json --type=fvt
+      ibmcloud doi publishtestrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --filelocation=./mochafvt.json --type=fvt
 
       if [ $grunt_result -ne 0 ]; then
          exit $grunt_result
@@ -163,16 +143,6 @@ stages:
     job: Build
   triggers:
   - type: stage
-  properties:
-  - name: LOGICAL_APP_NAME
-    value: ${LOGICAL_APP_NAME}
-    type: text
-  - name: BUILD_PREFIX
-    value: master
-    type: text
-  - name: IBM_CLOUD_API_KEY
-    value: ${INSIGHTS_API_KEY}
-    type: secure
   jobs:
   - name: Gate
     type: tester
@@ -185,9 +155,9 @@ stages:
          ibmcloud api test.cloud.ibm.com
       fi
 
-      ibmcloud plugin install doi
+      echo 'n' | ibmcloud plugin install doi
       ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
-      ibmcloud doi evaluategate --policy "Weather Unit Test, Code Coverage, and FVT Checks" --forcedecision
+      ibmcloud doi evaluategate --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --policy "Weather Unit Test, Code Coverage, and FVT Checks" --forcedecision
 - name: PRODUCTION
   inputs:
   - type: job
@@ -202,18 +172,6 @@ stages:
   - name: APP_URL
     value: undefined
     type: text
-  - name: LOGICAL_APP_NAME
-    value: ${LOGICAL_APP_NAME}
-    type: text
-  - name: LOGICAL_ENV_NAME
-    value: PRODUCTION
-    type: text
-  - name: BUILD_PREFIX
-    value: master
-    type: text
-  - name: IBM_CLOUD_API_KEY
-    value: ${INSIGHTS_API_KEY}
-    type: secure
   jobs:
   - name: Deploy
     type: deployer
@@ -248,4 +206,14 @@ stages:
 
       ibmcloud plugin install doi
       ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
-      ibmcloud doi publishdeployrecord --env=$LOGICAL_ENV_NAME --status=$deploy_status --joburl=$APP_URL
+      ibmcloud doi publishdeployrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --env=PRODUCTION --status=$deploy_status --joburl=$APP_URL
+properties:
+- name: API_KEY
+  value: ${INSIGHTS_API_KEY}
+  type: secure
+- name: MY_APP_NAME
+  value: ${LOGICAL_APP_NAME}
+  type: text
+- name: buildProperties
+  value: build.properties
+  type: file
