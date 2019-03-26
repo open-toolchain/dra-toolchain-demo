@@ -7,6 +7,10 @@ stages:
     service: ${DEMODRA_API_REPO}
   triggers:
   - type: commit
+  properties:
+  - name: MY_BUILD_NUMBER
+    value: $GIT_BRANCH:$BUILD_NUMBER
+    type: text
   jobs:
   - name: Build
     type: builder
@@ -31,11 +35,11 @@ stages:
           ibmcloud api test.cloud.ibm.com
       fi
 
-      echo "MY_BUILD_NUMBER=${GIT_BRANCH}:${BUILD_NUMBER}" >> $ARCHIVE_DIR/build.properties
+      echo "MY_BUILD_NUMBER=${MY_BUILD_NUMBER}" >> $ARCHIVE_DIR/build.properties
 
       echo 'n' | ibmcloud plugin install doi
       ibmcloud login --apikey $API_KEY --no-region
-      ibmcloud doi publishbuildrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=pass
+      ibmcloud doi publishbuildrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --branch=$GIT_BRANCH --repositoryurl=$GIT_URL --commitid=$GIT_COMMIT --status=$build_status
   - name: Unit Test and Code Coverage
     type: tester
     script: |-
@@ -55,7 +59,7 @@ stages:
       fi
 
       echo 'n' | ibmcloud plugin install doi
-      ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
+      ibmcloud login --apikey $API_KEY --no-region
       ibmcloud doi publishtestrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --filelocation=./mochatest.json --type=unittest
       ibmcloud doi publishtestrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
 
@@ -109,7 +113,7 @@ stages:
       fi
 
       echo 'n' | ibmcloud plugin install doi
-      ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
+      ibmcloud login --apikey $API_KEY --no-region
       ibmcloud doi publishdeployrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --env=STAGING --status=$deploy_status --joburl=$APP_URL
   - name: FVT Test
     type: tester
@@ -130,7 +134,7 @@ stages:
       fi
 
       echo 'n' | ibmcloud plugin install doi
-      ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
+      ibmcloud login --apikey $API_KEY --no-region
       ibmcloud doi publishtestrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --filelocation=./mochafvt.json --type=fvt
 
       if [ $grunt_result -ne 0 ]; then
@@ -156,7 +160,7 @@ stages:
       fi
 
       echo 'n' | ibmcloud plugin install doi
-      ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
+      ibmcloud login --apikey $API_KEY --no-region
       ibmcloud doi evaluategate --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --policy "Weather Unit Test, Code Coverage, and FVT Checks" --forcedecision
 - name: PRODUCTION
   inputs:
@@ -205,7 +209,7 @@ stages:
       fi
 
       ibmcloud plugin install doi
-      ibmcloud login --apikey $IBM_CLOUD_API_KEY --no-region
+      ibmcloud login --apikey $API_KEY --no-region
       ibmcloud doi publishdeployrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --env=PRODUCTION --status=$deploy_status --joburl=$APP_URL
 properties:
 - name: API_KEY
