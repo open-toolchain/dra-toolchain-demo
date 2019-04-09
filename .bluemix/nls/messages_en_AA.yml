@@ -9,7 +9,7 @@ deploy.longDescription: "6:The Delivery Pipeline automates continuous deployment
 deploy.appDescription: "7:The name of your app"
 deploy.appName: "8:App name"
 deploy.apiKeyTitle: "9:IBM Cloud API Key"
-deploy.apiKeyDescription: "10:An API key is required to access the IBM Cloud Runtime. If you do not have one, you can click the Create button. You can also obtain an API key with 'bx iam api-key-create' or via the console at https://console.bluemix.net/iam/#/apikeys"
+deploy.apiKeyDescription: "10:An API key is required to access the IBM Cloud Runtime. If you do not have one, you can click the Create button. You can also obtain an API key with 'ibmcloud iam api-key-create' or via the console at https://cloud.ibm.com/iam#/apikeys"
 region: "11:Region"
 organization: "12:Organization"
 space: "13:Space"
