@@ -15,39 +15,27 @@
     "type": "object",
     "properties": {
         "staging-region": {
-            "description": {
-                "$ref": "#/messages/deploy.region"
-            },
+            "description": "The IBM Cloud CF region",
             "type": "string"
         },
         "staging-organization": {
-            "description": {
-                "$ref": "#/messages/deploy.org"
-            },
+            "description": "The IBM Cloud CF org",
             "type": "string"
         },
         "staging-space": {
-            "description": {
-                "$ref": "#/messages/deploy.space"
-            },
+            "description": "The IBM Cloud CF space",
             "type": "string"
         },
         "prod-region": {
-            "description": {
-                "$ref": "#/messages/deploy.region"
-            },
+            "description": "The IBM Cloud CF region",
             "type": "string"
         },
         "prod-organization": {
-            "description": {
-                "$ref": "#/messages/deploy.org"
-            },
+            "description": "The IBM Cloud CF org",
             "type": "string"
         },
         "prod-space": {
-            "description": {
-                "$ref": "#/messages/deploy.space"
-            },
+            "description": "The IBM Cloud CF space",
             "type": "string"
         },
         "api-key": {
