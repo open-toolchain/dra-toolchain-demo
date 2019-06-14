@@ -23,11 +23,17 @@ toolchain:
       $ref: "#/messages/template.gettingStarted"
 services:
   demodra-repo:
-    service_id: githubpublic
+    service_id: >
+      $env.source_provider ? $env.source_provider : 'githubpublic'
     parameters:
       repo_name: '{{form.githubpublic.parameters.demodra-repo_name}}'
-      repo_url: '{{form.githubpublic.parameters.demodra-repo_url}}'
-      type: clone
+      repo_url: >
+        $env.type === 'link' ? 
+          $env.app_repo : '{{form.githubpublic.parameters.demodra-repo_url}}'
+      source_repo_url: >
+        $env.type === 'fork' || $env.type === 'clone' ? 
+          $env.app_repo : '{{form.githubpublic.parameters.demodra-repo_url}}'
+      type: $env.type || 'clone'
       has_issues: true
       enable_traceability: true
   demodra-build:
