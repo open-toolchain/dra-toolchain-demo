@@ -114,7 +114,7 @@ stages:
 
       ibmcloud plugin install doi -f
       ibmcloud login --apikey $API_KEY --no-region
-      ibmcloud doi publishdeployrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --env=STAGING --status=$deploy_status --joburl=$APP_URL
+      ibmcloud doi publishdeployrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --env=STAGING --status=$deploy_status
   - name: FVT Test
     type: tester
     script: |-
@@ -210,7 +210,7 @@ stages:
 
       ibmcloud plugin install doi -f
       ibmcloud login --apikey $API_KEY --no-region
-      ibmcloud doi publishdeployrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --env=PRODUCTION --status=$deploy_status --joburl=$APP_URL
+      ibmcloud doi publishdeployrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --env=PRODUCTION --status=$deploy_status
 properties:
 - name: API_KEY
   value: ${INSIGHTS_API_KEY}
