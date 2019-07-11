@@ -213,7 +213,7 @@ stages:
       ibmcloud doi publishdeployrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --env=PRODUCTION --status=$deploy_status
 properties:
 - name: API_KEY
-  value: ${INSIGHTS_API_KEY}
+  value: ${API_KEY}
   type: secure
 - name: MY_APP_NAME
   value: ${LOGICAL_APP_NAME}
