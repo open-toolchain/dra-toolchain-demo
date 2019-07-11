@@ -28,10 +28,10 @@ services:
     parameters:
       repo_name: '{{form.githubpublic.parameters.demodra-repo_name}}'
       repo_url: >
-        $env.type === 'link' ? 
+        $env.type === 'link' ?
           $env.app_repo : '{{form.githubpublic.parameters.demodra-repo_url}}'
       source_repo_url: >
-        $env.type === 'fork' || $env.type === 'clone' ? 
+        $env.type === 'fork' || $env.type === 'clone' ?
           $env.app_repo : '{{form.githubpublic.parameters.demodra-repo_url}}'
       type: $env.type || 'clone'
       has_issues: true
@@ -56,7 +56,6 @@ services:
           PROD_ORG_NAME: '{{form.pipeline.parameters.prod-organization}}'
           PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
           API_KEY: '{{form.pipeline.parameters.api-key}}'
-          INSIGHTS_API_KEY: '{{form.draservicebroker.parameters.iam-api-key}}'
         execute: true
   dra:
     service_id: draservicebroker
@@ -64,9 +63,6 @@ services:
   webide:
     service_id: orion
 form:
-  draservicebroker:
-    schema:
-      $ref: insights.json
   pipeline:
     parameters:
       staging-space: staging
