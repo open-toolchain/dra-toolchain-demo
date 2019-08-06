@@ -20,6 +20,7 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
       npm install
+      npm install -g grunt-cli
 
       grunt dev-setup --no-color
       grunt_result=$?
@@ -46,6 +47,7 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
       npm install
+      npm install -g grunt-cli
 
       set +e
       grunt dev-test-cov --no-color
@@ -121,6 +123,7 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
       npm install
+      npm install -g grunt-cli
 
       set +e
       grunt fvt-test --no-color
