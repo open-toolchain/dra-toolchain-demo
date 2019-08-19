@@ -6,7 +6,6 @@
       {
         "name": "Unit Test Rule",
         "description": "Unit Test Rule",
-        "format":"mocha",
         "stage":"unittest",
         "percentPass":100,
         "regressionCheck":true,
@@ -19,7 +18,6 @@
       {
         "name": "Code Coverage Rule",
         "description": "Code Coverage Rule",
-        "format":"istanbul",
         "stage":"code",
         "codeCoverage":80,
         "regressionCheck":true
@@ -27,7 +25,6 @@
       {
         "name": "FVT Test Rule",
         "description": "FVT Test Rule",
-        "format":"mocha",
         "stage":"fvt",
         "percentPass":100,
         "regressionCheck":true,
