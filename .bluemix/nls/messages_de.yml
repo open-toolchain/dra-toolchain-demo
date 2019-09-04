@@ -1,25 +1,23 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
 template.name: "Cloud Foundry-App entwickeln und testen"
-template.description: "Mit dieser cloudnativen Toolchain können Sie eine einfache Cloud Foundry-Anwendung entwickeln, bereitstellen und testen. Standardmäßig verwendet die Toolchain die Node.js-Beispiel-Wetter-App; Sie können aber auch eine Verknüpfung zu Ihrem eigenen GitHub-Repository herstellen. Die Toolchain wird mit Komponententests mit Mocha ausgeführt, die Codeabdeckung wird mit Istanbul überprüft. 
-  
-  Diese Toolchain verwendet Tools, die Teil des Continuous Delivery-Service sind. Wenn sich noch keine Instanz dieses Service in der ausgewählten Organisation befindet, wird sie automatisch hinzugefügt, wenn Sie auf **Erstellen** klicken. Dabei ist der kostenlose Plan [Lite](/catalog/services/continuous-delivery/) ausgewählt.
-  
-  Klicken Sie auf **Erstellen**, um zu beginnen.
-  
-  Schrittweise Anweisungen finden Sie im [Lernprogramm](https://www.ibm.com/devops/method/tutorials/tutorial_toolchain_devops_insights)."
-template.gettingStarted: "**Ihre Toolchain steht bereit!**
-  **Schnelleinstieg:** Schreiben Sie eine Änderung im Git-Repository fest, um einen neuen Build und eine neue Bereitstellung auszulösen."
+template.description: "Mit dieser cloudnativen Toolchain können Sie DevOps Insights für die Bereitstellung einer einfachen Cloud Foundry-Anwendung über ein Gateway nutzen. Standardmäßig verwendet die Toolchain die Node.js-Beispiel-Wetter-App; Sie können aber auch eine Verknüpfung zu Ihrem eigenen GitHub-Repository herstellen. Die Toolchain wird mit Komponententests mit Mocha ausgeführt, die Codeabdeckung wird mit Istanbul überprüft. \n\nDiese Toolchain verwendet Tools, die Teil des Continuous Delivery-Service sind. Wenn sich noch keine Instanz dieses Service in der ausgewählten Ressourcengruppe oder Organisation befindet, wird sie automatisch hinzugefügt, wenn Sie auf **Erstellen** klicken. Dabei ist der kostenlose Plan [Lite](/catalog/services/continuous-delivery/) ausgewählt.\n\nKlicken Sie auf **Erstellen**, um zu beginnen.\n\nSchrittweise Anweisungen finden Sie im [Lernprogramm](https://www.ibm.com/cloud/garage/tutorials/use-develop-test-cloud-foundry-app-toolchain)."
+template.gettingStarted: "**Ihre Toolchain steht bereit!**\n**Schnelleinstieg:** Schreiben Sie eine Änderung im Git-Repository fest, um einen neuen Build und eine neue Bereitstellung auszulösen. Die Ergebnisse sehen Sie im Dashboard für Bereitstellungsrisiken (Deployment Risk) von DevOps Insights. Schrittweise Anweisungen finden Sie im [Lernprogramm](https://www.ibm.com/cloud/garage/tutorials/use-develop-test-cloud-foundry-app-toolchain?task=2) für diese Toolchain."
 deploy.title: "Microservices-Bereitstellungsphase"
 deploy.description: "Feb Demo Microservices - Phasenschema"
 deploy.longDescription: "Mit Delivery Pipeline wird die kontinuierliche Bereitstellung automatisiert."
 deploy.appDescription: "Der Name Ihrer App"
 deploy.appName: "Name der App"
+deploy.apiKeyTitle: "IBM Cloud-API-Schlüssel"
+deploy.apiKeyDescription: "Für den Zugriff auf IBM Cloud Runtime ist ein API-Schlüssel erforderlich. Wenn Sie keinen besitzen, können Sie auf die Schaltfläche 'Erstellen' klicken. Sie können auch mit 'ibmcloud iam api-key-create' oder über die Konsole unter https://cloud.ibm.com/iam#/apikeys einen API-Schlüssel anfordern"
+deploy.region: "Die IBM Cloud-CF-Region"
+deploy.org: "Die IBM Cloud-CF-Organisation"
+deploy.space: "Der IBM Cloud-CF-Bereich"
 region: "Region"
 organization: "Organisation"
 space: "Bereich"
-devStage: "Stagingphase"
-prodStage: "Produktionsphase"
+devStage: "Staging"
+prodStage: "Produktion"
 github.title: "Microservices-Entwicklungsphase"
 github.description: "Feb Demo Microservices - GitHub-Schema"
 github.longDescription: "Mit GitHub können Sie Ihren Quellcode in einem neuen oder vorhandenen GitHub-Repository speichern."
@@ -40,8 +38,3 @@ headerSVG.webIde: "WEB-IDE"
 headerSVG.devops: "DEVOPS"
 headerSVG.insights: "INSIGHTS"
 headerSVG.issueTracker: "ISSUE-TRACKER"
-deploy.apiKeyTitle: "IBM Cloud-API-Schlüssel"
-deploy.apiKeyDescription: "Für den Zugriff auf IBM Cloud Runtime ist ein API-Schlüssel erforderlich. Wenn Sie keinen besitzen, können Sie auf die Schaltfläche 'Erstellen' klicken. Sie können auch mit 'ibmcloud iam api-key-create' oder über die Konsole unter https://cloud.ibm.com/iam#/apikeys einen API-Schlüssel anfordern"
-deploy.region: "Die IBM Cloud-CF-Region"
-deploy.org: "Die IBM Cloud-CF-Organisation"
-deploy.space: "Der IBM Cloud-CF-Bereich"

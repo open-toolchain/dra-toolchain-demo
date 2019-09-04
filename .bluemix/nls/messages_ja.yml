@@ -1,25 +1,23 @@
 ---
 #The format for creating a link with a URL and text is [link text](link url) with no spaces or characters between the two sets of brackets- []()
 template.name: "Cloud Foundry アプリの開発およびテスト"
-template.description: "このクラウド・ネイティブのツールチェーンを使用して、シンプルな Cloud Foundry アプリケーションの開発、デプロイ、およびテストを行うことができます。デフォルトで、このツールチェーンはサンプル Node.js の気象アプリを使用します。あるいは、ユーザー独自の GitHub リポジトリーにリンクすることもできます。このツールチェーンは、Mocha を使用して単体テストを実行し、Istanbul を使用してコード・カバレッジをチェックします。
-  
-  このツールチェーンは、Continuous Delivery サービスに含まれるツールを使用します。そのサービスのインスタンスが選択した組織にない場合は、**「作成」**をクリックすると、無料の[ライト](/catalog/services/continuous-delivery/)・プランが選択されてインスタンスが自動的に追加されます。
-  
-  開始するには、**「作成」**をクリックしてください。
-  
-  ステップバイステップの説明については、[チュートリアル](https://www.ibm.com/devops/method/tutorials/tutorial_toolchain_devops_insights)を参照してください。"
-template.gettingStarted: "**ツールチェーンの準備ができました。**
-  **クイック・スタート:** Git リポジトリーに対する変更をコミットし、新しいビルドおよびデプロイメントをトリガーしてください。"
+template.description: "このクラウド・ネイティブのツールチェーンでは、DevOps Insights を使用してシンプル Cloud Foundry アプリケーションのデプロイメントをゲート制御することができます。デフォルトで、このツールチェーンはサンプル Node.js の気象アプリを使用します。あるいは、ユーザー独自の GitHub リポジトリーにリンクすることもできます。このツールチェーンは、Mocha を使用して単体テストを実行し、Istanbul を使用してコード・カバレッジをチェックします。\n\nこのツールチェーンは、Continuous Delivery サービスに含まれるツールを使用します。そのサービスのインスタンスが、選択したリソース・グループや組織にまだない場合は、**「作成」**をクリックすると、無料の[ライト](/catalog/services/continuous-delivery/) プランが選択されてインスタンスが自動的に追加されます。\n\n開始するには、**「作成」**をクリックしてください。\n\n段階的な説明については、[チュートリアル](https://www.ibm.com/cloud/garage/tutorials/use-develop-test-cloud-foundry-app-toolchain) を参照してください。"
+template.gettingStarted: "**ツールチェーンの準備ができました。**\n**クイック・スタート:** Git リポジトリーに対する変更をコミットし、新しいビルドおよびデプロイメントをトリガーしてください。DevOps Insights の「デプロイメント・リスク」ダッシュボードで結果を確認してください。段階的な説明については、このツールチェーンの[チュートリアル](https://www.ibm.com/cloud/garage/tutorials/use-develop-test-cloud-foundry-app-toolchain?task=2) を参照してください。"
 deploy.title: "MicroServices のデプロイ・ステージ"
 deploy.description: "Feb Demo Microservices のステージのスキーマ"
 deploy.longDescription: "Delivery Pipeline は、継続的デプロイメントを自動化します。"
 deploy.appDescription: "アプリの名前"
 deploy.appName: "アプリ名"
+deploy.apiKeyTitle: "IBM Cloud API キー"
+deploy.apiKeyDescription: "IBM Cloud ランタイムにアクセスするには API キーは必須です。 API キーがない場合は、「作成」ボタンをクリックしてください。 API キーは、「ibmcloud iam api-key-create」やコンソール (https://cloud.ibm.com/iam#/apikeys) を使用しても取得できます。"
+deploy.region: "IBM Cloud CF リージョン"
+deploy.org: "IBM Cloud CF 組織"
+deploy.space: "IBM Cloud CF スペース"
 region: "リージョン"
 organization: "組織"
 space: "スペース"
-devStage: "ステージング・ステージ"
-prodStage: "実動ステージ"
+devStage: "ステージング"
+prodStage: "実動"
 github.title: "Microservices のデプロイメント・ステージ"
 github.description: "Feb Demo Microservices の GitHub のスキーマ"
 github.longDescription: "GitHub により、ソース・コードを新規または既存の GitHub リポジトリーに保管できます。"
@@ -40,8 +38,3 @@ headerSVG.webIde: "WEB IDE"
 headerSVG.devops: "DEVOPS"
 headerSVG.insights: "INSIGHTS"
 headerSVG.issueTracker: "問題トラッカー"
-deploy.apiKeyTitle: "IBM Cloud API キー"
-deploy.apiKeyDescription: "IBM Cloud ランタイムにアクセスするには API キーは必須です。 API キーがない場合は、「作成」ボタンをクリックしてください。 API キーは、「ibmcloud iam api-key-create」やコンソール (https://cloud.ibm.com/iam#/apikeys) を使用しても取得できます。"
-deploy.region: "IBM Cloud CF リージョン"
-deploy.org: "IBM Cloud CF 組織"
-deploy.space: "IBM Cloud CF スペース"
