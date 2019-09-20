@@ -3,13 +3,13 @@
 template.name: "Cloud Foundry アプリの開発およびテスト"
 template.description: "このクラウド・ネイティブのツールチェーンでは、DevOps Insights を使用してシンプル Cloud Foundry アプリケーションのデプロイメントをゲート制御することができます。デフォルトで、このツールチェーンはサンプル Node.js の気象アプリを使用します。あるいは、ユーザー独自の GitHub リポジトリーにリンクすることもできます。このツールチェーンは、Mocha を使用して単体テストを実行し、Istanbul を使用してコード・カバレッジをチェックします。
   
-  このツールチェーンは、Continuous Delivery サービスに含まれるツールを使用します。そのサービスのインスタンスが、選択したリソース・グループや組織にまだない場合は、**「作成」**をクリックすると、無料の[ライト](/catalog/services/continuous-delivery/) プランが選択されてインスタンスが自動的に追加されます。
+  \n\nこのツールチェーンは、Continuous Delivery サービスに含まれるツールを使用します。そのサービスのインスタンスが、選択したリソース・グループや組織にまだない場合は、**「作成」**をクリックすると、無料の[ライト](/catalog/services/continuous-delivery/) プランが選択されてインスタンスが自動的に追加されます。
   
-  開始するには、**「作成」**をクリックしてください。
+  \n\n開始するには、**「作成」**をクリックしてください。
   
-  段階的な説明については、[チュートリアル](https://www.ibm.com/cloud/garage/tutorials/use-develop-test-cloud-foundry-app-toolchain) を参照してください。"
+  \n\n段階的な説明については、[チュートリアル](https://www.ibm.com/cloud/garage/tutorials/use-develop-test-cloud-foundry-app-toolchain) を参照してください。"
 template.gettingStarted: "**ツールチェーンの準備ができました。**
-  **クイック・スタート:** Git リポジトリーに対する変更をコミットし、新しいビルドおよびデプロイメントをトリガーしてください。DevOps Insights の「デプロイメント・リスク」ダッシュボードで結果を確認してください。段階的な説明については、このツールチェーンの[チュートリアル](https://www.ibm.com/cloud/garage/tutorials/use-develop-test-cloud-foundry-app-toolchain?task=2) を参照してください。"
+  \n\n**クイック・スタート:** Git リポジトリーに対する変更をコミットし、新しいビルドおよびデプロイメントをトリガーしてください。DevOps Insights の「デプロイメント・リスク」ダッシュボードで結果を確認してください。段階的な説明については、このツールチェーンの[チュートリアル](https://www.ibm.com/cloud/garage/tutorials/use-develop-test-cloud-foundry-app-toolchain?task=2) を参照してください。"
 deploy.title: "MicroServices のデプロイ・ステージ"
 deploy.description: "Feb Demo Microservices のステージのスキーマ"
 deploy.longDescription: "Delivery Pipeline は、継続的デプロイメントを自動化します。"
