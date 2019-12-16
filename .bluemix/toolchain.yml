@@ -73,6 +73,6 @@ form:
   githubpublic:
     parameters:
       demodra-repo_name: '{{toolchain.name}}'
-      demodra-repo_url: 'https://github.com/open-toolchain/DemoDRA'
+      demodra-repo_url: 'https://github.com/devops-insights/DemoDOI'
     schema:
       $ref: github.json

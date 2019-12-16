@@ -20,9 +20,7 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
       npm install
-      npm install -g grunt-cli
-
-      grunt dev-setup --no-color
+      npm run build
       grunt_result=$?
 
       build_status="pass"
@@ -47,10 +45,9 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
       npm install
-      npm install -g grunt-cli
 
       set +e
-      grunt dev-test-cov --no-color
+      npm run testcov
       grunt_result=$?
       set -e
 
@@ -63,7 +60,7 @@ stages:
       ibmcloud plugin install doi -f
       ibmcloud login --apikey $API_KEY --no-region
       ibmcloud doi publishtestrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --filelocation=./mochatest.json --type=unittest
-      ibmcloud doi publishtestrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --filelocation=./tests/coverage/reports/coverage-summary.json --type=code
+      ibmcloud doi publishtestrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --filelocation=./tests/coverage-summary.json --type=code
 
       if [ $grunt_result -ne 0 ]; then
          exit $grunt_result
@@ -94,10 +91,11 @@ stages:
     script: |
       #!/bin/bash
       export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
+      npm install serve
 
       # Push app
       export CF_APP_NAME="staging-$CF_APP"
-      cf push "${CF_APP_NAME}"
+      cf push "${CF_APP_NAME}" -f manifest-test.yml
       push_result=$?
       export APP_URL=https://$(cf app $CF_APP_NAME | grep -e urls: -e routes: | awk '{print $2}')
       # View logs
@@ -123,10 +121,15 @@ stages:
       #!/bin/bash
       export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
       npm install
-      npm install -g grunt-cli
+
+      #Install chrome
+      apt install -y openjdk-11-jdk && \
+      apt-get install -y libdbusmenu-gtk3-4 libappindicator3-1 libgtk-3-0 libxss1 xdg-utils fonts-liberation && \
+      wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -P /tmp/ && \
+      dpkg -i /tmp/google-chrome*.deb
 
       set +e
-      grunt fvt-test --no-color
+      npm run fvt
       grunt_result=$?
       set -e
 
@@ -138,7 +141,7 @@ stages:
 
       ibmcloud plugin install doi -f
       ibmcloud login --apikey $API_KEY --no-region
-      ibmcloud doi publishtestrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --filelocation=./mochafvt.json --type=fvt
+      ibmcloud doi publishtestrecord --logicalappname="$MY_APP_NAME" --buildnumber=$MY_BUILD_NUMBER --filelocation=./junitfvt.xml --type=fvt
 
       if [ $grunt_result -ne 0 ]; then
          exit $grunt_result
@@ -191,10 +194,11 @@ stages:
     script: |
       #!/bin/bash
       export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
+      npm install serve
 
       # Push app
       export CF_APP_NAME="$CF_APP"
-      cf push "${CF_APP_NAME}"
+      cf push "${CF_APP_NAME}" -f manifest.yml
       push_result=$?
       export APP_URL=https://$(cf app $CF_APP_NAME | grep -e urls: -e routes: | awk '{print $2}')
       # View logs
