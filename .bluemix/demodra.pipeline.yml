@@ -18,7 +18,6 @@ stages:
     build_type: shell
     script: |-
       #!/bin/bash
-      export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
       npm install
       npm run build
       grunt_result=$?
@@ -90,8 +89,6 @@ stages:
       api_key: ${API_KEY}
     script: |
       #!/bin/bash
-      export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
-      npm install serve
 
       # Push app
       export CF_APP_NAME="staging-$CF_APP"
@@ -193,8 +190,6 @@ stages:
       api_key: ${API_KEY}
     script: |
       #!/bin/bash
-      export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
-      npm install serve
 
       # Push app
       export CF_APP_NAME="$CF_APP"
