@@ -13,9 +13,14 @@ template:
     - demodra-repo
     - dra
   info:
-    git url: >-
-      [https://github.com/open-toolchain/dra-toolchain-demo](https://github.com/open-toolchain/dra-toolchain-demo)
-    git branch: '[master](https://github.com/open-toolchain/dra-toolchain-demo/tree/master)'
+    git url: >
+      "[" + $env.repository + "]" +
+        "(" + $env.repository + ")"
+    git branch: >
+      "[" + $env.branch + "]" +
+        "(" + $env.repository +
+          "/tree/" + $env.branch + ")"
+    hosted_region: ""
 toolchain:
   name: 'devops-insights-{{timestamp}}'
   template:
@@ -24,7 +29,7 @@ toolchain:
 services:
   demodra-repo:
     service_id: >
-      $env.source_provider ? $env.source_provider : 'githubpublic'
+      $env.source_provider ? $env.source_provider : 'hostedgit'
     parameters:
       repo_name: '{{form.githubpublic.parameters.demodra-repo_name}}'
       repo_url: >
@@ -56,6 +61,8 @@ services:
           PROD_ORG_NAME: '{{form.pipeline.parameters.prod-organization}}'
           PROD_REGION_ID: '{{form.pipeline.parameters.prod-region}}'
           API_KEY: '{{form.pipeline.parameters.api-key}}'
+          APP_REPO_BRANCH: >
+            $env.template.info.hosted_region !== "" ? 'main': 'master'
         execute: true
   dra:
     service_id: draservicebroker
@@ -73,6 +80,11 @@ form:
   githubpublic:
     parameters:
       demodra-repo_name: '{{toolchain.name}}'
-      demodra-repo_url: 'https://github.com/devops-insights/DemoDOI'
+      demodra-repo_url: >
+        if ( $env.template.info.hosted_region !== "" ) {
+          "https://{{template.info.hosted_region}}.git.cloud.ibm.com/open-toolchain/DemoDOI"
+        } else {
+          "https://github.com/devops-insights/DemoDOI"
+        }
     schema:
       $ref: github.json
