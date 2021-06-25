@@ -48,7 +48,7 @@ stages:
     type: tester
     script: |-
       #!/bin/bash
-      export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
+      export PATH=/opt/IBM/node-v15.14.0/bin:$PATH
       npm install
 
       set +e
@@ -122,7 +122,7 @@ stages:
     type: tester
     script: |-
       #!/bin/bash
-      export PATH=/opt/IBM/node-v6.7.0/bin:$PATH
+      export PATH=/opt/IBM/node-v15.14.0/bin:$PATH
       npm install
 
       #Install chrome
