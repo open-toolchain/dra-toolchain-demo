@@ -1,10 +1,5 @@
 ---
 defaultBaseImageVersion: latest
-properties:
-- name: APP_REPO_BRANCH
-  value: ${APP_REPO_BRANCH}
-  type: text
-  default: master
 stages:
 - name: BUILD
   inputs:
@@ -229,3 +224,7 @@ properties:
 - name: buildProperties
   value: build.properties
   type: file
+- name: APP_REPO_BRANCH
+  value: ${APP_REPO_BRANCH}
+  type: text
+  default: master
