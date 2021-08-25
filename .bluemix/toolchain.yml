@@ -84,7 +84,7 @@ form:
         if ( $env.template.info.hosted_region !== "" ) {
           "https://{{template.info.hosted_region}}.git.cloud.ibm.com/open-toolchain/DemoDOI"
         } else {
-          "https://github.com/devops-insights/DemoDOI"
+          "https://github.com/open-toolchain/DemoDOI"
         }
     schema:
       $ref: github.json
