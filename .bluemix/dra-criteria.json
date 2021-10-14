@@ -19,7 +19,7 @@
         "name": "Code Coverage Rule",
         "description": "Code Coverage Rule",
         "stage":"code",
-        "codeCoverage":80,
+        "codeCoverage":60,
         "regressionCheck":true
       },
       {
