@@ -67,8 +67,6 @@ services:
   dra:
     service_id: draservicebroker
     $ref: dra.yml
-  webide:
-    service_id: orion
 form:
   pipeline:
     parameters:
