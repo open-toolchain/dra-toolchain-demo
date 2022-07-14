@@ -58,7 +58,6 @@
 <rect id="svg_4" x="125.7" y="268.5" class="st3" width="83.5" height="4.5"/>
 <rect id="svg_5" x="215.3" y="268.5" class="st4" width="83.5" height="4.5"/>
 <circle id="svg_6" class="st1" cx="160.4" cy="355" r="26.5"/>
-<line id="svg_7" class="st5" x1="76.8" y1="436.5" x2="76.8" y2="417.5"/>
 <g id="svg_8">
 	<g id="svg_9">
 		<line id="svg_10" class="st5" x1="120.9" y1="355" x2="110.6" y2="355"/>
@@ -75,7 +74,6 @@
 		</g>
 	</g>
 </g>
-<circle id="svg_18" class="st1" cx="76.8" cy="470.4" r="26.5"/>
 <g id="svg_70">
 	<g id="g3-2" transform="scale(1.7500001192092896) ">
 		<g id="svg_71">
@@ -104,23 +102,6 @@
 		</g>
 	</g>
 </g>
-<path id="XMLID_17_" class="st10" d="M86.3,485.2H67c-2.8,0-5-2.3-5-5v-19.6c0-2.8,2.3-5,5-5h19.3c2.8,0,5,2.3,5,4.9v19.6
-	C91.3,482.9,89.1,485.2,86.3,485.2z"/>
-<circle id="XMLID_16_" class="st11" cx="85.5" cy="463.9" r="2.8"/>
-<circle id="XMLID_15_" class="st11" cx="81.5" cy="470.6" r="2.8"/>
-<circle id="XMLID_14_" class="st11" cx="77.5" cy="477.4" r="2.8"/>
-<path id="XMLID_13_" class="st12" d="M77.4,473.2H77c-0.2,0-0.3-0.1-0.3-0.3V468c0-0.2,0.1-0.3,0.3-0.3h0.4c0.2,0,0.3,0.1,0.3,0.3
-	v4.8C77.7,473.1,77.6,473.2,77.4,473.2z"/>
-<path id="XMLID_3_" class="st12" d="M89.7,467.7L89.7,467.7c-0.3,0-0.5,0.2-0.5,0.5v3.1l-2.6-3.4l0,0l-0.1-0.1l0,0h-0.1h-0.1l0,0
-	l0,0h-0.1l0,0c-0.2,0.1-0.3,0.2-0.4,0.4c0,0,0,0,0,0.1l0,0v4.4c0,0.3,0.2,0.5,0.5,0.5l0,0c0.3,0,0.5-0.2,0.5-0.5v-2.9l2.6,3.3
-	c0.1,0.1,0.1,0.1,0.2,0.2l0,0h0.1l0,0l0,0h0.1l0,0c0.2,0,0.4-0.3,0.4-0.5v-4.6C90.2,467.9,90,467.7,89.7,467.7z"/>
-<path id="XMLID_9_" class="st12" d="M67.2,465.1c-2.2,0-4,1.9-4,4.3c0,2.4,1.8,4.3,4,4.3c2.2,0,3.9-2,3.9-4.3
-	C71.1,467.1,69.3,465.1,67.2,465.1z M67.2,472.8c-1.8,0-3.2-1.5-3.2-3.4c0-1.9,1.4-3.5,3.2-3.5c1.8,0,3.2,1.5,3.2,3.5
-	S68.9,472.8,67.2,472.8z"/>
-<path id="XMLID_8_" class="st12" d="M75.3,469.5v-0.3c0-0.8-0.7-1.5-1.5-1.5h-0.1h-1.1l0,0c-0.3,0-0.5,0.2-0.5,0.5v4.4
-	c0,0.3,0.2,0.5,0.5,0.5l0,0c0.3,0,0.5-0.2,0.5-0.5v-1.3l1.2,1.6c0.2,0.2,0.5,0.3,0.7,0.1l0,0c0.2-0.2,0.3-0.5,0.1-0.7l-1-1.4
-	C74.8,470.9,75.3,470.3,75.3,469.5L75.3,469.5z M74.5,469.4c0,0.4-0.3,0.8-0.8,0.8h-0.6l0,0v-1.6h0.6
-	C74.1,468.6,74.5,469,74.5,469.4L74.5,469.4z"/>
 <circle id="svg_83" class="st1" cx="346.8" cy="470.9" r="26.5"/>
 <path id="svg_100" class="st13" d="M349.8,481.8l-6.8,0.5c-0.6,0-1.1-0.4-1.2-1l0,0c0-0.6,0.4-1.1,1-1.2l6.8-0.5
 	c0.6,0,1.1,0.4,1.2,1l0,0C350.9,481.3,350.4,481.8,349.8,481.8z"/>
@@ -282,7 +263,6 @@
 <text id="headerSVG.deliver" transform="matrix(1 0 0 1 125.4 285.95)" class="st28 st29">DELIVER</text>
 <text id="headerSVG.run" transform="matrix(1 0 0 1 214.4 285.95)" class="st28 st29">RUN</text>
 <text id="headerSVG.learn" transform="matrix(1 0 0 1 303.4 285.95)" class="st28 st29">LEARN</text>
-<text id="headerSVG.webIde" transform="matrix(1 0 0 1 54.4 514.95)" class="st28 st29">WEB IDE</text>
 <text id="headerSVG.pipeline" transform="matrix(1 0 0 1 135.4 396.95)" class="st28 st29">PIPELINE</text>
 <text id="headerSVG.ibmCloud" transform="matrix(1 0 0 1 221.4 396.95)" class="st28 st29">IBM Cloud</text>
 <text id="headerSVG.devops" transform="matrix(1 0 0 1 325.4 510.95)" class="st28 st29">DEVOPS</text>
