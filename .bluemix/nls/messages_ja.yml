@@ -7,9 +7,9 @@ template.description: "このクラウド・ネイティブのツールチェー
   
   開始するには、**「作成」**をクリックしてください。
   
-  段階的な説明については、[チュートリアル](https://www.ibm.com/cloud/garage/tutorials/use-develop-test-cloud-foundry-app-toolchain) を参照してください。"
+  段階的な説明については、[チュートリアル](https://www.ibm.com/cloud/architecture/tutorials/use-develop-test-cloud-foundry-app-toolchain) を参照してください。"
 template.gettingStarted: "**ツールチェーンの準備ができました。**
-  **クイック・スタート:** Git リポジトリーに対する変更をコミットし、新しいビルドおよびデプロイメントをトリガーしてください。DevOps Insights の「デプロイメント・リスク」ダッシュボードで結果を確認してください。段階的な説明については、このツールチェーンの[チュートリアル](https://www.ibm.com/cloud/garage/tutorials/use-develop-test-cloud-foundry-app-toolchain?task=2) を参照してください。"
+  **クイック・スタート:** Git リポジトリーに対する変更をコミットし、新しいビルドおよびデプロイメントをトリガーしてください。DevOps Insights の「デプロイメント・リスク」ダッシュボードで結果を確認してください。段階的な説明については、このツールチェーンの[チュートリアル](https://www.ibm.com/cloud/architecture/tutorials/use-develop-test-cloud-foundry-app-toolchain?task=2) を参照してください。"
 deploy.title: "MicroServices のデプロイ・ステージ"
 deploy.description: "Feb Demo Microservices のステージのスキーマ"
 deploy.longDescription: "Delivery Pipeline は、継続的デプロイメントを自動化します。"
